@@ -1,0 +1,17 @@
+- >Trois types de profils : 
+    Admin, annoneur et superviseur
+-> 4 ou 5 : 
+    Vue de face 
+    Vue de profil 
+    Vue de l'intérieur
+    Vue de l'arrière
+
+-> Démo Client : Vendredi 14
+
+Ajouter typde de Moteur
+
+
+
+-> Mettre de l'option désactiver temporairment la mise en relation d'une véhicule 
+-> Ajouter les informations du propriétaire dans show-vehicule  
+-> Redirection whatsapp

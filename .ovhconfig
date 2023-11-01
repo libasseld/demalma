@@ -1,0 +1,7 @@
+;app.engine=php
+;app.engine.version=8.1
+;http.firewall=none
+;environment=production
+;décommenter pour tester
+environment=development
+;container.image=stable
