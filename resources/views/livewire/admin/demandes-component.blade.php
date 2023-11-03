@@ -3,7 +3,7 @@
         <!-- start main content section -->
         
         <div >
-            <div class="panel">
+            <div class="panel ">
                 
                 
                 @if($showform == false)
@@ -16,52 +16,21 @@
                         <input type="text" placeholder="Rechercher..." wire:model="search" class="form-input" required />
 
                     </div>
-                    <div class="dataTable-container">
-                        <table id="tableStripe" class="table-striped dataTable-table">
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Offre</th>
-                                    <th>Date d'ajout</th>
-                                    <th>Paiement</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($items as $item)
-                                    <tr>
-                                        <td>{{$item->prenom ." ".$item->nom}}</td>
-                                        <td>{{$item->offre->designation}}</td>
-                                        <td>{{$item->created_at}}</td>
-                                        <td>
-                                            <div class="flex">
-                                                @if ($item->paiement == 1)
-                                                    <button
-                                                        class="bg-steal-500 text-center text-white px-2 rounded-sm"
-                                                        aria-label="Modifier" type="button">
-                                                        {{-- <span wire:ignore><i data-feather="edit" class="h-4"></i></span> --}} Payé
-                                                    </button>
-                                                @else
-                                                    <button
-                                                        class="bg-rose-500 text-center text-white px-2 rounded-sm"
-                                                        aria-label="Modifier" type="button">
-                                                        {{-- <span wire:ignore><i data-feather="edit" class="h-4"></i></span> --}} En attente
-                                                    </button>
-                                                @endif
-                                            </div>
-                                        </td>
-                                        <td>
-                                            @if ($item->etat == 0)
-                                                <button type="button" wire:click="annuler_reservation({{$item->id}})" class="btn py-1 px-4 bg-red-500 text-slate-50 mr-4 ">Annuler</button>
-                                            @else
-                                                <span class="text-red-300 text-sm p-1"> X Annulé X</span>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                
-                            </tbody>
-                        </table>
+                    <div class="grid grid-cols-3 gap-4">
+                        @foreach ($items as $item)
+                        <a class="shadow-xl px-6 py-8 mt-4 rounded-2xl relative bg-white" href="{{route('detail-demande', ['id'=>$item->id])}}">
+                            <div class="absolute card-image ">
+                                <img src="{{ asset($item->offre->image_url ? 'storage/' . $item->offre->image_url : 'storage/card-images/offre_profil.png') }}" class="h-12 m-auto shadow-2xl" alt="">
+                            </div>
+                            <h2 class="text-lg font-bold">{{$item->prenom." ".$item->nom}}</h2>
+                            <p class="mt-2">
+                                <u>Offre</u> : {{$item->offre->designation}}
+                            </p>
+                            <div class="w-full h-4 mt-2 bg-[#ebedf2] dark:bg-dark/40 rounded-md">
+                                <div class="bg-danger h-4 rounded-full w-8/12 text-center text-white flex justify-between items-center px-2 text-xs"><span>PHP</span><span>90%</span></div>
+                            </div>
+                        </a>
+                        @endforeach
                     </div>
                     <div class="dataTable-bottom flex  justify-end">
                         {{ $items->links() }}

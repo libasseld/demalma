@@ -44,15 +44,10 @@ Route::middleware([
     Route::view('/offres', "admin-pages.offres")->name('offres');
     Route::view('/demandes', "admin-pages.demandes")->name('demandes');
     Route::view('/offre-form/{slug?}', "admin-pages.offre-form")->name('offre-form');
-    Route::view('/types-vehicules', "admin-pages.types-vehicules")->name('types-vehicules');
-    Route::view('/types-locations', "admin-pages.types-locations")->name('types-locations');
-    Route::view('/mon-parc', "admin-pages.mon-parc")->name('mon-parc');
+    
     Route::view('/dashboard', "admin-pages.demandes")->name('dashboard');
-    Route::view('/reservations', "admin-pages.reservations")->name('reservations');
-    Route::view('/publications', "admin-pages.publications")->name('publications');
-    Route::view('/new-car', "admin-pages.new-car")->name('new-car');
-    Route::view('/edit-car/{slug}', "admin-pages.edit-car")->name('edit-car');
-    Route::view('/show-car/{slug}', "admin-pages.show-car")->name('show-car');
+    Route::view('/detail-demande/{id}', "admin-pages.detail-demande")->name('detail-demande');
+    
 });
 Route::view('/inscription', "auth.inscription")->name('inscription');
 Route::post('inscription', [UserController::class,'inscription'])->name('inscription-post');
