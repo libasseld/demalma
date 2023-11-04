@@ -16,4 +16,6 @@ class Demande extends Model
     public function pays(){
         return $this->belongsTo(Pays::class);
     }
+
+    
 }
