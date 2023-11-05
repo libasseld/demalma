@@ -81,7 +81,7 @@ class UsersManagementComponent extends Component
             ->orWhere('prenom','LIKE', '%'.$this->search.'%');
        })
        ->orderByDesc('id')
-        ->paginate(3)]);
+        ->paginate(10)]);
     }
     public function edit($id)
     {

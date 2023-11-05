@@ -32,9 +32,11 @@ class DemandesComponent extends Component
     {
         $query = Demande::with(['offre', 'pays']);
         if (Auth::user()->role->code == 'usager' || Auth::user()->role->code == 'superviseur'){
-            $query->where('user_id', Auth::user()->id);
+            //$query->where('user_id', Auth::user()->id);
         }elseif (Auth::user()->role->code == 'usager'){
             $query->whereIn('id', Auth::user()->demandes->pluck('demande_id'));
+        }elseif (Auth::user()->role->code == 'agent-de-traitement'){
+            /* $query->whereRelation(); */
         }
         return view(
             'livewire.admin.demandes-component',
