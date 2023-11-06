@@ -14,7 +14,7 @@ class DemandesComponent extends Component
     public $showform = false;
     public $edit_mode = false;
     public $categorie_offre;
-    public $search;
+    public $search,$etat_demande=1;
     use WithPagination;
 
     protected function rules()

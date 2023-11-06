@@ -17,7 +17,7 @@ class DetailDemandeComponent extends Component
     public $demande, $current_agent_demande;
     public $agent_traitement_id, $agent_depot_id, $agent_livraison_id;
     public $agents_traitements, $agents_depots, $agents_livraisons;
-    public $show_modal_agents = false, $modal_acceptation = false, $value_accept;
+    public $show_modal_agents = false, $modal_acceptation = false, $value_accept, $doc_to_approve;
 
     public function mount(){
         /* $demandes = Demande::all();
@@ -32,7 +32,7 @@ class DetailDemandeComponent extends Component
             
         } */
         $current_user_role = auth()->user()->role->code;
-        $this->demande = Demande::with(['agent_traitement','agent_depot','agent_livraison','notes'])
+        $this->demande = Demande::with(['agent_traitement','agent_depot','agent_livraison','documents','notes'])
             ->where('id', $this->demande_id)->first();
         if(empty($this->demande)){
             abort(404);
@@ -86,6 +86,14 @@ class DetailDemandeComponent extends Component
         $item->user_id      = auth()->user()->id;
         $item->demande_id   = $this->demande->id;
         $item->save();
+        return redirect(request()->header('Referer'));
+
+    }
+
+    public function save_approbation(){
+        $doc = DemandeDocument::where('id',$this->doc_to_approve)->first();
+        $doc->etat = 1;
+        $doc->save();
         return redirect(request()->header('Referer'));
 
     }

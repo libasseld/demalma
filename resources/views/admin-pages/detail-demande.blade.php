@@ -12,7 +12,14 @@
             </ul>
         </div>
         <!-- end main content section -->
+
+        @if (Auth::user()->role->code == 'usager')
+        <livewire:admin.detail-demande-usager-component :demande_id="$id">
+
+        @else
         <livewire:admin.detail-demande-component :demande_id="$id">
+
+        @endif
 
       
     </div>

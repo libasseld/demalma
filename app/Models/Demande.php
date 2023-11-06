@@ -21,6 +21,10 @@ class Demande extends Model
     public function notes(){
         return $this->hasMany(DemandeNotes::class);
     }
+
+    public function documents(){
+        return $this->hasMany(DemandeDocument::class);
+    }
     public function user_demande(){
         return $this->hasMany(UserDemande::class);
     }
