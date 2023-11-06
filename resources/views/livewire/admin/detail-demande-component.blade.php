@@ -26,8 +26,8 @@
             <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-2">
             </div>
             <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-4 ">
-                @if (Auth::user()->role->code == 'superviseur' || !empty($current_agent_demande))
-                    @if ($current_agent_demande && $current_agent_demande->acceptee == 0)
+                @if (in_array(Auth::user()->role->code, ['superviseur', 'admin']) || !empty($current_agent_demande))
+                    @if (isset($current_agent_demande->acceptee) && $current_agent_demande->acceptee == 0)
                         <div class="h-full flex flex-col justify-center">
                             <div class="text-center">
                                 Cette demande vous a été affecté, acceptez-vous traiter cette demande?
@@ -47,10 +47,11 @@
                                     {{ !isset($demande->agent_traitement->user) ? 'Aucun' : $demande->agent_traitement->user->name }}
                                 </td>
                                 <td>
-                                    <span
-                                        class="badge bg-{{ $demande->agent_traitement->acceptee == 0 ? 'primary' : ($demande->agent_traitement->terminee == 0 ? 'warning' : 'success') }}">
+                                    @if ($demande->agent_traitement)
+                                    <span class="badge bg-{{ $demande->agent_traitement->acceptee == 0 ? 'primary' : ($demande->agent_traitement->terminee == 0 ? 'warning' : 'success') }}">
                                         {{ $demande->agent_traitement->acceptee == 0 ? 'En attente' : ($demande->agent_traitement->terminee == 0 ? 'En cours' : 'Terminé') }}
                                     </span>
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
@@ -58,11 +59,12 @@
                                 <td class="p-2">
                                     {{ !isset($demande->agent_depot->user) ? 'Aucun' : $demande->agent_depot->user->name }}
                                 </td>
-                                <td>
-                                    <span
-                                        class="badge bg-{{ $demande->agent_depot->acceptee == 0 ? 'primary' : ($demande->agent_depot->terminee == 0 ? 'warning' : 'success') }}">
+                                <td> 
+                                    @if ($demande->agent_depot)
+                                    <span class="badge bg-{{ $demande->agent_depot->acceptee == 0 ? 'primary' : ($demande->agent_depot->terminee == 0 ? 'warning' : 'success') }}">
                                         {{ $demande->agent_depot->acceptee == 0 ? 'En attente' : ($demande->agent_depot->terminee == 0 ? 'En cours' : 'Terminé') }}
                                     </span>
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
@@ -71,16 +73,17 @@
                                     {{ !isset($demande->agent_livraison->user) ? 'Aucun' : $demande->agent_livraison->user->name }}
                                 </td>
                                 <td>
-                                    <span
-                                        class="badge bg-{{ $demande->agent_livraison->acceptee == 0 ? 'primary' : ($demande->agent_livraison->terminee == 0 ? 'warning' : 'success') }}">
+                                    @if ($demande->agent_livraison)
+                                    <span class="badge bg-{{ $demande->agent_livraison->acceptee == 0 ? 'primary' : ($demande->agent_livraison->terminee == 0 ? 'warning' : 'success') }}">
                                         {{ $demande->agent_livraison->acceptee == 0 ? 'En attente' : ($demande->agent_livraison->terminee == 0 ? 'En cours' : 'Terminé') }}
                                     </span>
+                                    @endif
                                 </td>
                             </tr>
                         </table>
                     @endif
 
-                    @if (Auth::user()->role->code == 'superviseur')
+                    @if (in_array(Auth::user()->role->code, ['superviseur', 'admin']))
                         <button type="button" wire:click="$set('show_modal_agents', true)"
                             class="btn btn-warning btn-sm mt-2 float-right">Modifier</button>
                     @endif
@@ -98,13 +101,13 @@
                     <div class="bg-gray-100 p-4 rounded-md mt-4">
                         <h3 class="text-xl font-semibold dark:text-white-light">Autres notes : </h3>
                         @foreach ($demande->notes as $item)
-                            <div class="mb-4">
-                                <div class="flex justify-between">
+                            <div class="mb-4 bg-white rounded-lg p-2 shadow-md ">
+                                <div class="flex justify-between border-b border-pink-700">
                                     <span>{{ $item->user->name }}</span>
                                     <span>{{ $item->created_at }}</span>
 
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-2 ">
                                     <i>{{ $item->notes }}</i>
                                 </div>
                                 <hr class="mt-2">
@@ -121,7 +124,7 @@
                                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
                                         class="text-red-700 text-sm">{{ $message }}</span> </p>
                             @enderror
-                            <button type="submit" class="btn btn-dark btn-block">Ajouter</button>
+                            <button type="submit" class="btn btn-primary w-full btn-block">Ajouter</button>
                         </form>
                     </div>
                 </div>
@@ -132,7 +135,7 @@
                 <div class="panel mb-4">
                     @foreach ($demande->documents as $item)
                     @if (!empty($item->doc_url))
-                    <div class="bg-slate-50 rounded-md px-4 py-2 flex justify-between">
+                    <div class="bg-slate-50 rounded-md px-4 py-2 flex justify-between mt-2">
                         <div class="flex items-center">
                             <div class="grid h-8 w-8 place-content-center rounded-md border border-white-dark/20 dark:border-[#191e3a]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -153,7 +156,23 @@
                         </div>
                     </div>
                     @else
-                        
+                    <div class="bg-slate-50 rounded-md px-4 py-2 flex justify-between mt-2">
+                        <div class="flex items-center">
+                            <div class="grid h-8 w-8 place-content-center rounded-md border border-white-dark/20 dark:border-[#191e3a]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.5" d="M16 4.00195C18.175 4.01406 19.3529 4.11051 20.1213 4.87889C21 5.75757 21 7.17179 21 10.0002V16.0002C21 18.8286 21 20.2429 20.1213 21.1215C19.2426 22.0002 17.8284 22.0002 15 22.0002H9C6.17157 22.0002 4.75736 22.0002 3.87868 21.1215C3 20.2429 3 18.8286 3 16.0002V10.0002C3 7.17179 3 5.75757 3.87868 4.87889C4.64706 4.11051 5.82497 4.01406 8 4.00195" stroke="currentColor" stroke-width="1.5"></path>
+                                    <path d="M8 14H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                                    <path d="M7 10.5H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                                    <path d="M9 17.5H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                                    <path d="M8 3.5C8 2.67157 8.67157 2 9.5 2H14.5C15.3284 2 16 2.67157 16 3.5V4.5C16 5.32843 15.3284 6 14.5 6H9.5C8.67157 6 8 5.32843 8 4.5V3.5Z" stroke="currentColor" stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                            <p class="ml-2 font-bold">{{$item->name}}</p>
+                        </div>
+                        <div class="flex">
+                            <span class="badge bg-warning">Document non soumis</span>
+                        </div>
+                    </div>
                     @endif
                     @endforeach
                 </div>

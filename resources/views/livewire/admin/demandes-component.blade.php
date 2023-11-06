@@ -15,9 +15,9 @@
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
                             <div class="bg-white rounded-md flex justify-around p-2 items-center">
-                                <button type="button" wire:click="$set('etat_demande', 0)" class="text-md px-4 py-2 text-primary ">Nouvelles</button>
-                                <button type="button" wire:click="$set('etat_demande', 1)" class="text-md px-4 py-2 text-white bg-primary rounded-md">En cours</button>
-                                <button type="button" wire:click="$set('etat_demande', 2)" class="text-md px-4 py-2 text-primary ">Terminées</button>
+                                <button type="button" wire:click="$set('etat_demande', 0)" class="text-md px-4 py-2 {{$etat_demande == 0 ? 'text-white bg-primary rounded-md' : 'text-primary'}} ">Nouvelles</button>
+                                <button type="button" wire:click="$set('etat_demande', 1)" class="text-md px-4 py-2 {{$etat_demande == 1 ? 'text-white bg-primary rounded-md' : 'text-primary'}}">En cours</button>
+                                <button type="button" wire:click="$set('etat_demande', 2)" class="text-md px-4 py-2 {{$etat_demande == 2 ? 'text-white bg-primary rounded-md' : 'text-primary'}} ">Terminées</button>
                             </div>
                             <input type="text" placeholder="Rechercher..." wire:model="search" class="form-input" required />
                         </div>
@@ -31,7 +31,7 @@
                                     <div class="absolute -top-8 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-md bg-primary text-white-light ltr:left-6 rtl:right-6">
                                         <img src="{{ asset($item->offre->image_url ? 'storage/' . $item->offre->image_url : 'storage/card-images/offre_profil.png') }}" class="h-12 m-auto shadow-2xl" alt="">
                                     </div>
-                                    <h5 class="mb-3.5 text-lg font-semibold text-dark dark:text-white-light">{{$item->prenom." ".$item->nom}}</h5>
+                                    <h5 class="mb-2 text-lg font-semibold text-dark dark:text-white-light">{{$item->prenom." ".$item->nom}}</h5>
                                     <p class="mt-2">
                                         <u>Offre</u> : {{$item->offre->designation}}
                                     </p>
