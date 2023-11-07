@@ -170,7 +170,7 @@
                             <p class="ml-2 font-bold">{{$item->name}}</p>
                         </div>
                         <div class="flex">
-                            <span class="badge bg-warning">Document non soumis</span>
+                            <span class="badge bg-warning">Document non transmis</span>
                         </div>
                     </div>
                     @endif

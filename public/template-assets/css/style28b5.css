@@ -7944,3 +7944,7 @@ img[src*="favicon"] {
 .bg-offre-left{
   background-color: #fff8fc;
 }
+
+.box-pagination-customers{
+  margin-top: auto;
+}

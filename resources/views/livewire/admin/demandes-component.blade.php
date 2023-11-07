@@ -13,7 +13,7 @@
                             <h5 class="text-lg font-semibold dark:text-white-light  md:mb-0">Gestion des demandes</h5>
                             {{-- <button wire:click="$set('showform',true)" class="btn btn-dark ">Ajouter</button> --}}
                         </div>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full bg-slate-200 p-2 rounded-md">
                             <div class="bg-white rounded-md flex justify-around p-2 items-center">
                                 <button type="button" wire:click="$set('etat_demande', 0)" class="text-md px-4 py-2 {{$etat_demande == 0 ? 'text-white bg-primary rounded-md' : 'text-primary'}} ">Nouvelles</button>
                                 <button type="button" wire:click="$set('etat_demande', 1)" class="text-md px-4 py-2 {{$etat_demande == 1 ? 'text-white bg-primary rounded-md' : 'text-primary'}}">En cours</button>
@@ -35,13 +35,19 @@
                                     <p class="mt-2">
                                         <u>Offre</u> : {{$item->offre->designation}}
                                     </p>
-                                    <span href="javascript:;" class="mx-auto font-semibold text-primary hover:underline  text-right">
+                                    <p class="mt-2">
+                                        <u>Date</u> : {{$item->created_at}}
+                                    </p>
+                                    <p class="mt-2">
+                                        <u>Paiement</u> : <span class="badge {{$item->paiement == 0 ? 'bg-warning' : 'bg-success'}}">{{$item->paiement == 0 ? 'En attente' : 'Paiement Effectué'}}</span>
+                                    </p>
+                                    {{-- <span href="javascript:;" class="mx-auto font-semibold text-primary hover:underline  text-right">
                                         Voir
 
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative inline-block h-4 w-4 transition-all duration-300 group-hover:translate-x-2 ltr:ml-1 rtl:mr-1 rtl:rotate-180 rtl:group-hover:-translate-x-2">
                                             <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg>
-                                    </span>
+                                    </span> --}}
                                 </div>
                             </div>
                         </a>

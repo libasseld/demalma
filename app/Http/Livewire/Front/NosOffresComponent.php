@@ -11,7 +11,7 @@ class NosOffresComponent extends Component
     public function render()
     {
         return view('livewire.front.nos-offres-component',[
-            'categories_offres' => CategorieOffre::with('offres')->get()
+            'categories_offres' => CategorieOffre::with('offres')->whereHas('offres')->get()
         ]);
     }
 
