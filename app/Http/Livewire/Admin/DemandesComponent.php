@@ -35,8 +35,10 @@ class DemandesComponent extends Component
             //$query->where('user_id', Auth::user()->id);
         }elseif (Auth::user()->role->code == 'usager'){
             $query->whereIn('id', Auth::user()->demandes->pluck('demande_id'));
-        }elseif (Auth::user()->role->code == 'agent-de-traitement'){
-            /* $query->whereRelation(); */
+        }elseif (in_array(Auth::user()->role->code, ['agent-de-traitement','agent-de-depot','agent-de-livraison'])){
+            $query->whereHas('user_demande', function ($query) {
+                $query->where('user_id', Auth::user()->id);
+            });
         }
         return view(
             'livewire.admin.demandes-component',

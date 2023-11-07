@@ -24,6 +24,14 @@
                 </table>
             </div>
             <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-2">
+                <img src="{{ asset($demande->offre->image_url ? 'storage/' . $demande->offre->image_url : 'storage/card-images/offre_profil.png') }}" class="h-12 m-auto shadow-2xl" alt="">
+                <p class="text-center font-bold">
+                    {{$demande->offre->designation}}
+                </p>
+                <p class="text-center"> 
+                    Créée le {{$demande->created_at_fr}}
+                </p>
+
             </div>
             <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-4 ">
                 @if (in_array(Auth::user()->role->code, ['superviseur', 'admin']) || !empty($current_agent_demande))
@@ -32,17 +40,17 @@
                             <div class="text-center">
                                 Cette demande vous a été affecté, acceptez-vous traiter cette demande?
                             </div>
-                            <div class="flex justify-around mt-2">
-                                <button class="btn btn-outline-success " wire:click="show_modal_acceptation(1)">
+                            <div class="flex justify-around mt-2 flex-wrap ">
+                                <button class="btn btn-outline-success btn-sm mb-2" wire:click="show_modal_acceptation(1)">
                                     Accepter ? </button>
-                                <button class="btn btn-outline-danger " wire:click="show_modal_acceptation(-1)"> Ne pas
+                                <button class="btn btn-outline-danger btn-sm mb-2" wire:click="show_modal_acceptation(-1)"> Ne pas
                                     accepter ? </button>
                             </div>
                         </div>
                     @else
                         <table>
                             <tr>
-                                <th class="text-left">Traitement : </th>
+                                <th class="text-left">Traitement: </th>
                                 <td class="p-2">
                                     {{ !isset($demande->agent_traitement->user) ? 'Aucun' : $demande->agent_traitement->user->name }}
                                 </td>
@@ -55,7 +63,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="text-left">Dépôt : </th>
+                                <th class="text-left">Dépôt: </th>
                                 <td class="p-2">
                                     {{ !isset($demande->agent_depot->user) ? 'Aucun' : $demande->agent_depot->user->name }}
                                 </td>
@@ -68,7 +76,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="text-left">Livraison : </th>
+                                <th class="text-left">Livraison: </th>
                                 <td class="p-2">
                                     {{ !isset($demande->agent_livraison->user) ? 'Aucun' : $demande->agent_livraison->user->name }}
                                 </td>

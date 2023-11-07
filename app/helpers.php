@@ -23,10 +23,10 @@ if (!function_exists('date_to_fr')) {
    }
 }
 if (!function_exists('setupFlash')) {
-   function setupFlash($title, $message, $type)
+   function setupFlash( $message, $type)
    {
        Session::flash('swal_msg', [
-           'title' => $title,
+           
            'message' => $message,
            'type' => $type,
        ]);

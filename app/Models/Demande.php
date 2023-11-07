@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\BaseModel;
 use Laravel\Prompts\Note;
 
-class Demande extends Model
+class Demande extends BaseModel
 {
     use HasFactory;
+    
 
     public function offre(){
         return $this->belongsTo(Offre::class);
