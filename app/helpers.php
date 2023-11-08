@@ -2,6 +2,7 @@
 
 use App\Mail\ContactMail;
 use App\Mail\ReservationMail;
+use App\Models\DemandeActions;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 
@@ -10,6 +11,18 @@ if (!function_exists('reformat_text_option')) {
    {
       $text = str_replace("_"," ",$text);
       return ucfirst($text);
+   }
+}
+
+if (!function_exists('save_demande_action')) {
+    function save_demande_action($user_id, $demande_id, $label, $color)
+   {
+      $demande_action = new DemandeActions();
+      $demande_action->user_id = $user_id;
+      $demande_action->demande_id = $demande_id;
+      $demande_action->label = $label;
+      $demande_action->color = $color;
+      $demande_action->save();
    }
 }
 if (!function_exists('date_to_fr')) {

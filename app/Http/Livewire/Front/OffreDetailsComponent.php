@@ -6,6 +6,7 @@ use App\Models\CategorieOffre;
 use App\Models\Demande;
 use App\Models\Offre;
 use App\Models\Pays;
+use App\Models\User;
 use Livewire\Component;
 
 class OffreDetailsComponent extends Component
@@ -54,6 +55,12 @@ class OffreDetailsComponent extends Component
         $demande->demarrage     = $this->demarrage;
         $demande->note                 = $this->note;
         $demande->save();
+        //$user = User::where('email', $demande->email)->orWhere('telephone', $demande->telephone)->first();
+        $label          = $demande->prenom." ".$demande->nom.' a ajouté la demande';
+        $user_id        = null;
+        $demande_id     = $this->demande->id;
+        $color          = 'info';
+        save_demande_action($user_id, $demande_id, $label, $color);
         //sendEmailContact($donnees);
         setupFlash("Merci de nous avoir contacté  !", "Notre équipe va prendre en charge votre message et vous repondra dans les plus brefs délais", 'succes');
 

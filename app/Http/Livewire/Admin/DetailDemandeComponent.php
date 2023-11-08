@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Demande;
+use App\Models\DemandeActions;
 use App\Models\DemandeDocument;
 use App\Models\DemandeNotes;
 use App\Models\User;
@@ -12,6 +13,11 @@ use Livewire\Component;
 class DetailDemandeComponent extends Component
 {
     public $roles = ['traitement','depot','livraison'];
+    public $colors = [
+        'traitement' => 'danger',
+        'depot' => 'warning',
+        'livraison' => 'success'
+    ];
     public $demande_id;
     public $new_note;
     public $demande, $current_agent_demande;
@@ -20,9 +26,19 @@ class DetailDemandeComponent extends Component
     public $show_modal_agents = false, $modal_acceptation = false, $value_accept, $doc_to_approve;
 
     public function mount(){
-
+        /* $demandes = Demande::with(['user_demande'])->get();
+        foreach ($demandes as $key => $demande) {
+            foreach ($demande->user_demande as $key => $row) {
+                $demande_action = new DemandeActions();
+                $demande_action->user_id = $row->user_id;
+                $demande_action->demande_id = $demande->id;
+                $demande_action->label = 'Le '.$row->role_code.' de la demande a été assigné à '.$row->user->name;
+                $demande_action->color = 'primary';
+                $demande_action->save();
+            }
+        } */
         $current_user_role = auth()->user()->role->code;
-        $this->demande = Demande::with(['agent_traitement','agent_depot','agent_livraison','documents','notes','offre'])
+        $this->demande = Demande::with(['agent_traitement','agent_depot','agent_livraison','documents','actions','notes','offre'])
             ->where('id', $this->demande_id)->first();
         if(empty($this->demande)){
             abort(404);
@@ -52,17 +68,29 @@ class DetailDemandeComponent extends Component
         foreach($this->roles as $role){
             $variable = 'agent_'.$role.'_id';
             if(!empty($this->$variable)){
-                
+                $not_new = false;
                 $user_demande = UserDemande::where('demande_id', $this->demande_id)->where('role_code', $role)->first();
                 if(empty($user_demande)){
                     $user_demande = new UserDemande();
+                }
+                if($user_demande->user_id == $this->$variable 
+                && $user_demande->demande_id = $this->demande->id
+                && $user_demande->role_code = $role){
+                    $not_new = true;
                 }
                 $user_demande->user_id = $this->$variable;
                 $user_demande->demande_id = $this->demande->id;
                 $user_demande->role_code = $role;
                 $user_demande->save();
 
-            }
+                if($not_new == false){
+                    $label      = 'Le '.$role.' de la demande a été assigné à '.$user_demande->user->name;
+                    $user_id    = $user_demande->user->id;
+                    $demande_id      = $this->demande->id;
+                    $color          = $this->colors[$role];
+                    save_demande_action($user_id, $demande_id, $label, $color);
+                }
+            }   
         }
         setupFlash( "Dispatching enregistré avec succès", 'success');
 

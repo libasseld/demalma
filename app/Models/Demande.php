@@ -24,6 +24,10 @@ class Demande extends BaseModel
         return $this->hasMany(DemandeNotes::class);
     }
 
+    public function actions(){
+        return $this->hasMany(DemandeActions::class)->orderByDesc('id');
+    }
+
     public function documents(){
         return $this->hasMany(DemandeDocument::class);
     }

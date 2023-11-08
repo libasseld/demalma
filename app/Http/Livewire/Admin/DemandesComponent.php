@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Demande;
+use App\Models\DemandeActions;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -25,8 +26,9 @@ class DemandesComponent extends Component
     }
     public function mount()
     {
-
         $this->categorie_offre = new Demande();
+        //dd(DemandeActions::with('offre')->count() );
+        
     }
     public function render()
     {
