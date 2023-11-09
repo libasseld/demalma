@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\ConfirmationDemandeMail;
 use App\Mail\ContactMail;
 use App\Mail\ReservationMail;
 use App\Models\DemandeActions;
@@ -59,6 +60,17 @@ if (!function_exists('sendEmailReservation')) {
        $emails_cc = get_emails_cc();
        Mail::to($email)->bcc($emails_cc)->send(new ReservationMail($body));
        smilify('Envoyé', "Le mail d'invitation vous a été envoyé avec succès");
+
+       return back()->with('status','Mail envoyé avec succès');
+  }
+}
+if (!function_exists('sendEmailConfirmation')) {
+   function sendEmailConfirmation($demande )
+  {
+     
+       $emails_cc = get_emails_cc();
+       Mail::to($demande->email)->bcc($emails_cc)->send(new ConfirmationDemandeMail($demande));
+       //smilify('Envoyé', "Le mail d'invitation vous a été envoyé avec succès");
 
        return back()->with('status','Mail envoyé avec succès');
   }

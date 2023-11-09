@@ -61,7 +61,7 @@ class OffreDetailsComponent extends Component
         $demande_id     = $this->demande->id;
         $color          = 'info';
         save_demande_action($user_id, $demande_id, $label, $color);
-        //sendEmailContact($donnees);
+        sendEmailConfirmation($demande);
         setupFlash("Merci de nous avoir contacté  !", "Notre équipe va prendre en charge votre message et vous repondra dans les plus brefs délais", 'succes');
 
         return redirect()->route('home');

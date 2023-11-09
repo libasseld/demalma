@@ -28,7 +28,9 @@ class DemandesComponent extends Component
     {
         $this->categorie_offre = new Demande();
         //dd(DemandeActions::with('offre')->count() );
-        
+        $demande = Demande::first();
+        sendEmailConfirmation($demande);
+        dd("dkdkdk");
     }
     public function render()
     {

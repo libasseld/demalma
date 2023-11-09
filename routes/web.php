@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\PaiementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,10 @@ Route::middleware([
     Route::view('/detail-demande/{id}', "admin-pages.detail-demande")->name('detail-demande');
     
 });
+
+Route::get('/paiement/{demande_id}', [PaiementController::class, 'paytech'])->name('paiement');
+Route::get('/paiement-confirme/{id}', [PaiementController::class, 'paiement_confirme'])->name('paiement_confirme');
+Route::get('/annuler-paiement/{id}', [PaiementController::class, 'annuler_paiement'])->name('annuler_paiement');
 Route::view('/inscription', "auth.inscription")->name('inscription');
 Route::post('inscription', [UserController::class,'inscription'])->name('inscription-post');
 Route::get('/test-image', function() {
