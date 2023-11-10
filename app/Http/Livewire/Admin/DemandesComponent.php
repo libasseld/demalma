@@ -29,16 +29,16 @@ class DemandesComponent extends Component
         $this->categorie_offre = new Demande();
         //dd(DemandeActions::with('offre')->count() );
         $demande = Demande::first();
-        sendEmailConfirmation($demande);
-        dd("dkdkdk");
+        /* sendEmailConfirmation($demande);
+        dd("dkdkdk"); */
     }
     public function render()
     {
         $query = Demande::with(['offre', 'pays']);
-        if (Auth::user()->role->code == 'usager' || Auth::user()->role->code == 'superviseur'){
+        if (Auth::user()->role->code == 'admin' || Auth::user()->role->code == 'superviseur'){
             //$query->where('user_id', Auth::user()->id);
         }elseif (Auth::user()->role->code == 'usager'){
-            $query->whereIn('id', Auth::user()->demandes->pluck('demande_id'));
+            $query->where('user_id', Auth::user()->id);
         }elseif (in_array(Auth::user()->role->code, ['agent-de-traitement','agent-de-depot','agent-de-livraison'])){
             $query->whereHas('user_demande', function ($query) {
                 $query->where('user_id', Auth::user()->id);

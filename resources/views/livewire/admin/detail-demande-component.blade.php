@@ -3,7 +3,7 @@
         <!-- start main content section -->
 
         <div class="grid grid-cols-3 gap-3">
-            <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-2">
+            <div class="p-2 mt-4 border-2 border-gray-100 rounded-md shadow-xl panel-white">
                 <table>
                     <tr>
                         <th class="text-left">Nom : </th>
@@ -23,27 +23,35 @@
                     </tr>
                 </table>
             </div>
-            <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-2">
+            <div class="p-2 mt-4 border-2 border-gray-100 rounded-md shadow-xl panel-white">
                 <img src="{{ asset($demande->offre->image_url ? 'storage/' . $demande->offre->image_url : 'storage/card-images/offre_profil.png') }}" class="h-12 m-auto shadow-2xl" alt="">
-                <p class="text-center font-bold">
+                <p class="font-bold text-center">
                     {{$demande->offre->designation}}
                 </p>
                 <p class="text-center"> 
                     Créée le {{$demande->created_at_fr}}
                 </p>
-
+                @if ($demande->paiement == 1)
+                <div class="flex justify-center">
+                    <span class="text-white bg-teal-600 badge">Paiement effecté</span>
+                </div>
+                @else
+                <div class="flex justify-center">
+                    <span class="text-white bg-orange-600 badge">Paiement en attente</span>
+                </div>
+                @endif
             </div>
-            <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-4 ">
+            <div class="p-4 mt-4 border-2 border-gray-100 rounded-md shadow-xl panel-white ">
                 @if (in_array(Auth::user()->role->code, ['superviseur', 'admin']) || !empty($current_agent_demande))
                     @if (isset($current_agent_demande->acceptee) && $current_agent_demande->acceptee == 0)
-                        <div class="h-full flex flex-col justify-center">
+                        <div class="flex flex-col justify-center h-full">
                             <div class="text-center">
                                 Cette demande vous a été affecté, acceptez-vous traiter cette demande?
                             </div>
-                            <div class="flex justify-around mt-2 flex-wrap ">
-                                <button class="btn btn-outline-success btn-sm mb-2" wire:click="show_modal_acceptation(1)">
+                            <div class="flex flex-wrap justify-around mt-2 ">
+                                <button class="mb-2 btn btn-outline-success btn-sm" wire:click="show_modal_acceptation(1)">
                                     Accepter ? </button>
-                                <button class="btn btn-outline-danger btn-sm mb-2" wire:click="show_modal_acceptation(-1)"> Ne pas
+                                <button class="mb-2 btn btn-outline-danger btn-sm" wire:click="show_modal_acceptation(-1)"> Ne pas
                                     accepter ? </button>
                             </div>
                         </div>
@@ -54,7 +62,7 @@
                                 <td class="p-2">
                                     {{ !isset($demande->agent_traitement->user) ? 'Aucun' : $demande->agent_traitement->user->name }}
                                 </td>
-                                <td>
+                                <td  class="p-2">
                                     @if ($demande->agent_traitement)
                                     <span class="badge bg-{{ $demande->agent_traitement->acceptee == 0 ? 'primary' : ($demande->agent_traitement->terminee == 0 ? 'warning' : 'success') }}">
                                         {{ $demande->agent_traitement->acceptee == 0 ? 'En attente' : ($demande->agent_traitement->terminee == 0 ? 'En cours' : 'Terminé') }}
@@ -67,7 +75,7 @@
                                 <td class="p-2">
                                     {{ !isset($demande->agent_depot->user) ? 'Aucun' : $demande->agent_depot->user->name }}
                                 </td>
-                                <td> 
+                                <td class="p-2"> 
                                     @if ($demande->agent_depot)
                                     <span class="badge bg-{{ $demande->agent_depot->acceptee == 0 ? 'primary' : ($demande->agent_depot->terminee == 0 ? 'warning' : 'success') }}">
                                         {{ $demande->agent_depot->acceptee == 0 ? 'En attente' : ($demande->agent_depot->terminee == 0 ? 'En cours' : 'Terminé') }}
@@ -80,7 +88,7 @@
                                 <td class="p-2">
                                     {{ !isset($demande->agent_livraison->user) ? 'Aucun' : $demande->agent_livraison->user->name }}
                                 </td>
-                                <td>
+                                <td  class="p-2">
                                     @if ($demande->agent_livraison)
                                     <span class="badge bg-{{ $demande->agent_livraison->acceptee == 0 ? 'primary' : ($demande->agent_livraison->terminee == 0 ? 'warning' : 'success') }}">
                                         {{ $demande->agent_livraison->acceptee == 0 ? 'En attente' : ($demande->agent_livraison->terminee == 0 ? 'En cours' : 'Terminé') }}
@@ -89,11 +97,16 @@
                                 </td>
                             </tr>
                         </table>
+                        @if (in_array(Auth::user()->role->code, ['agent-de-traitement', 'agent-de-depot', 'agent-de-livraison']) && $current_agent_demande->terminee == 0)
+                            <div class="flex justify-center mt-2">
+                                <button class="btn btn-sm btn-success" wire:click="$set('show_modal_terminee', true)"> Marquer comme terminé</button>
+                            </div>
+                        @endif
                     @endif
 
                     @if (in_array(Auth::user()->role->code, ['superviseur', 'admin']))
                         <button type="button" wire:click="$set('show_modal_agents', true)"
-                            class="btn btn-warning btn-sm mt-2 float-right">Modifier</button>
+                            class="float-right mt-2 btn btn-warning btn-sm">Modifier</button>
                     @endif
                 @endif
             </div>
@@ -102,14 +115,14 @@
             <div class="panel panel-white">
                 <div>
 
-                    <div class="bg-pink-100 p-4 rounded-md">
+                    <div class="p-4 bg-pink-100 rounded-md">
                         <h3 class="text-xl font-semibold dark:text-white-light">Notes initiales : </h3>
                         <i>{{ $demande->note }}</i>
                     </div>
-                    <div class="bg-gray-100 p-4 rounded-md mt-4">
+                    <div class="p-4 mt-4 bg-gray-100 rounded-md">
                         <h3 class="text-xl font-semibold dark:text-white-light">Autres notes : </h3>
                         @foreach ($demande->notes as $item)
-                            <div class="mb-4 bg-white rounded-lg p-2 shadow-md ">
+                            <div class="p-2 mb-4 bg-white rounded-lg shadow-md ">
                                 <div class="flex justify-between border-b border-pink-700">
                                     <span>{{ $item->user->name }}</span>
                                     <span>{{ $item->created_at }}</span>
@@ -126,13 +139,13 @@
                         <form action="" wire:submit.prevent="addNote" class="mt-4">
                             <h5 class="text-lg font-bold">Nouvelle note</h5>
                             <div>
-                                <textarea class="form-textarea w-full" wire:model="new_note"></textarea>
+                                <textarea class="w-full form-textarea" wire:model="new_note"></textarea>
                             </div>
                             @error('new_note')
                                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                        class="text-red-700 text-sm">{{ $message }}</span> </p>
+                                        class="text-sm text-red-700">{{ $message }}</span> </p>
                             @enderror
-                            <button type="submit" class="btn btn-primary w-full btn-block">Ajouter</button>
+                            <button type="submit" class="w-full btn btn-primary btn-block">Ajouter</button>
                         </form>
                     </div>
                 </div>
@@ -140,10 +153,10 @@
 
             </div>
             <div>
-                <div class="panel mb-4">
+                <div class="mb-4 panel">
                     @foreach ($demande->documents as $item)
                     @if (!empty($item->doc_url))
-                    <div class="bg-slate-50 rounded-md px-4 py-2 flex justify-between mt-2">
+                    <div class="flex justify-between px-4 py-2 mt-2 rounded-md bg-slate-50">
                         <div class="flex items-center">
                             <div class="grid h-8 w-8 place-content-center rounded-md border border-white-dark/20 dark:border-[#191e3a]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,14 +170,14 @@
                             <p class="ml-2 font-bold">{{$item->name}}</p>
                         </div>
                         <div class="flex">
-                            <a href="{{asset('storage/'.$item->doc_url)}}" target="_blank" class="btn btn-primary btn-sm mr-2">Consulter</a>
+                            <a href="{{asset('storage/'.$item->doc_url)}}" target="_blank" class="mr-2 btn btn-primary btn-sm">Consulter</a>
                             @if($item->etat == 0)
                                 <button type="button" class="btn btn-success btn-sm" wire:click="$set('doc_to_approve', {{$item->id}})">Approuver</button>
                             @endif
                         </div>
                     </div>
                     @else
-                    <div class="bg-slate-50 rounded-md px-4 py-2 flex justify-between mt-2">
+                    <div class="flex justify-between px-4 py-2 mt-2 rounded-md bg-slate-50">
                         <div class="flex items-center">
                             <div class="grid h-8 w-8 place-content-center rounded-md border border-white-dark/20 dark:border-[#191e3a]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -225,16 +238,16 @@
         <div class="fixed inset-0 z-[999] hidden overflow-y-auto bg-[black]/60 !block"
             :class="open & amp; & amp;
             '!block'">
-            <div class="flex min-h-screen items-start justify-center px-4">
+            <div class="flex items-start justify-center min-h-screen px-4">
                 <div x-show="open" x-transition="" x-transition.duration.300=""
-                    class="panel my-8 w-full max-w-lg overflow-hidden rounded-lg border-0 p-0">
+                    class="w-full max-w-lg p-0 my-8 overflow-hidden border-0 rounded-lg panel">
                     <div class="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
                         <div class="text-lg font-bold">Gestionnaires de la demande</div>
                         <button type="button" class="text-white-dark hover:text-dark"
                             wire:click="$set('show_modal_agents', false)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                                stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
@@ -273,7 +286,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="mt-8 flex items-center justify-end">
+                        <div class="flex items-center justify-end mt-8">
                             <button type="button" class="btn btn-outline-danger"
                                 wire:click="$set('show_modal_agents', false)">Annuler</button>
                             <button type="button" class="btn btn-primary ltr:ml-4 rtl:mr-4"
@@ -287,16 +300,16 @@
     @if ($modal_acceptation)
         <div class="fixed inset-0 z-[999]  overflow-y-auto bg-[black]/60 !block" :class="open & amp; & amp;
         '!block'">
-            <div class="flex min-h-screen items-start justify-center px-4" @click.self="open = false">
+            <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
                 <div
-                    class="panel animate__animated animate__zoomInUp my-8 w-full max-w-lg overflow-hidden rounded-lg border-0 p-0">
+                    class="w-full max-w-lg p-0 my-8 overflow-hidden border-0 rounded-lg panel animate__animated animate__zoomInUp">
                     <div class="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
                         <h5 class="text-lg font-bold">Acceptation de la demande</h5>
                         <button type="button" class="text-white-dark hover:text-dark"
                             wire:click="$set('modal_acceptation', false)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                                stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
@@ -312,7 +325,7 @@
                                 <u>NB</u>: cette action est irreversible.
                             </p>
                         </div>
-                        <div class="mt-8 flex items-center justify-end">
+                        <div class="flex items-center justify-end mt-8">
                             <button type="button" class="btn btn-danger ltr:ml-4 rtl:mr-4"
                                 wire:click="$set('modal_acceptation', false)">Ferner</button>
                             @if ($value_accept == 1)
@@ -328,19 +341,57 @@
             </div>
         </div>
     @endif
+    @if ($show_modal_terminee)
+        <div class="fixed inset-0 z-[999]  overflow-y-auto bg-[black]/60 !block" :class="open & amp; & amp;
+        '!block'">
+            <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
+                <div
+                    class="w-full max-w-lg p-0 my-8 overflow-hidden border-0 rounded-lg panel animate__animated animate__zoomInUp">
+                    <div class="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
+                        <h5 class="text-lg font-bold">Clôture de la demande</h5>
+                        <button type="button" class="text-white-dark hover:text-dark"
+                            wire:click="$set('modal_acceptation', false)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-base font-medium text-[#1f2937] dark:text-white-dark/70">
+                            <p>
+                                Vous êtes sur le point de marquer vos actions ({{$current_agent_demande->role_code}}) sur la demande comme terminées.
+                            </p>
+                            <p>
+                                <u>NB</u>: cette action est irreversible.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-end mt-8">
+                            <button type="button" class="btn btn-danger ltr:ml-4 rtl:mr-4"
+                                wire:click="$set('modal_acceptation', false)">Ferner</button>
+                                <button type="button" class="btn btn-success ltr:ml-4 rtl:mr-4"
+                                wire:click="marquer_terminer">Oui ! Marquer terminé </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     @if ($doc_to_approve)
         <div class="fixed inset-0 z-[999]  overflow-y-auto bg-[black]/60 !block" :class="open & amp; & amp;
         '!block'">
-            <div class="flex min-h-screen items-start justify-center px-4" @click.self="open = false">
+            <div class="flex items-start justify-center min-h-screen px-4" @click.self="open = false">
                 <div
-                    class="panel animate__animated animate__zoomInUp my-8 w-full max-w-lg overflow-hidden rounded-lg border-0 p-0">
+                    class="w-full max-w-lg p-0 my-8 overflow-hidden border-0 rounded-lg panel animate__animated animate__zoomInUp">
                     <div class="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
                         <h5 class="text-lg font-bold">Approbation document</h5>
                         <button type="button" class="text-white-dark hover:text-dark"
                             wire:click="$set('doc_to_approve', null)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                                stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
@@ -355,7 +406,7 @@
                                 <u>NB</u>: cette action est irreversible.
                             </p>
                         </div>
-                        <div class="mt-8 flex items-center justify-end">
+                        <div class="flex items-center justify-end mt-8">
                             <button type="button" class="btn btn-danger ltr:ml-4 rtl:mr-4" wire:click="$set('doc_to_approve', null)">Ferner</button>
                             <button type="button" class="btn btn-success ltr:ml-4 rtl:mr-4" wire:click="save_approbation">Oui! Approuver </button>
                             

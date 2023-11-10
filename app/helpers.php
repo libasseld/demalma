@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\AfterPaiementMail;
 use App\Mail\ConfirmationDemandeMail;
 use App\Mail\ContactMail;
 use App\Mail\ReservationMail;
@@ -81,6 +82,16 @@ if (!function_exists('sendEmailContact')) {
       $email = 'libassediop32@gmail.com';
       $emails_cc = get_emails_cc();
       Mail::to($email)->bcc($emails_cc)->send(new ContactMail($body));
+
+      return back()->with('status','Mail envoyé avec succès');
+  }
+}
+if (!function_exists('sendEmailAfterPaiement')) {
+   function sendEmailAfterPaiement( $body, $password)
+  {
+      $email = 'libassediop32@gmail.com';
+      $emails_cc = get_emails_cc();
+      Mail::to($email)->bcc($emails_cc)->send(new AfterPaiementMail($body, $password));
 
       return back()->with('status','Mail envoyé avec succès');
   }

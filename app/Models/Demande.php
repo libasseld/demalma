@@ -10,7 +10,7 @@ use Laravel\Prompts\Note;
 class Demande extends BaseModel
 {
     use HasFactory;
-    
+    protected $appends = ['pourcentage_width'];
 
     public function offre(){
         return $this->belongsTo(Offre::class);
@@ -43,6 +43,18 @@ class Demande extends BaseModel
     }
     public function agent_livraison() {
         return $this->hasOne(UserDemande::class)->with('user')->where('role_code', 'livraison');
+    }
+    public function getPourcentageWidthAttribute() {
+        if($this->pourcentage <25){
+            return 'w-1/4';
+        }elseif($this->pourcentage >25 && $this->pourcentage <50){
+            return 'w-2/4';
+        }elseif($this->pourcentage >50 && $this->pourcentage <75){
+            return 'w-3/4';
+        }elseif($this->pourcentage >75){
+            return 'w-4/4';
+        }
+        
     }
 
 }

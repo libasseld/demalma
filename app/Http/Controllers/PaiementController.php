@@ -119,11 +119,8 @@ class PaiementController extends Controller
 
             $demande->save();
 
-            if(empty($password)){
-                $this->sendEmailOldUser($demande);
-            }else{
-                $this->sendEmailNewUser($demande, $password);
-            }
+            sendEmailAfterPaiement($demande, $password);
+           
 
             setupFlash("Paiement enregistré avec succès", "Votre paiement a été enregistré avec succès.Notre équipe se charge de votre réservation et vous contactera dans les prochaines heures.", 'succes');
 

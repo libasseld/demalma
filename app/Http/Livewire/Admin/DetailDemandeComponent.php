@@ -8,6 +8,7 @@ use App\Models\DemandeDocument;
 use App\Models\DemandeNotes;
 use App\Models\User;
 use App\Models\UserDemande;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class DetailDemandeComponent extends Component
@@ -18,12 +19,17 @@ class DetailDemandeComponent extends Component
         'depot' => 'warning',
         'livraison' => 'success'
     ];
+    public $pourcentages = [
+        'traitement' => 40,
+        'depot' => 60,
+        'livraison' => 100
+    ];
     public $demande_id;
     public $new_note;
     public $demande, $current_agent_demande;
     public $agent_traitement_id, $agent_depot_id, $agent_livraison_id;
     public $agents_traitements, $agents_depots, $agents_livraisons;
-    public $show_modal_agents = false, $modal_acceptation = false, $value_accept, $doc_to_approve;
+    public $show_modal_agents = false, $modal_acceptation = false,$show_modal_terminee, $value_accept, $doc_to_approve;
 
     public function mount(){
         /* $demandes = Demande::with(['user_demande'])->get();
@@ -130,6 +136,26 @@ class DetailDemandeComponent extends Component
         $this->current_agent_demande->acceptee = $this->value_accept;
         $this->current_agent_demande->save();
         setupFlash( "Décision enregistré avec succès", 'success');
+
+        return redirect(request()->header('Referer'));
+
+    }
+    public function marquer_terminer()  {
+        $pourcentage = $this->pourcentages[$this->current_agent_demande->role_code];
+        
+        $this->current_agent_demande->terminee = 1;
+        $this->current_agent_demande->save();
+        if($this->demande->pourcentage < $pourcentage){
+            $this->demande->pourcentage = $pourcentage;
+            $this->demande->save();
+        }
+        $demande_action = new DemandeActions();
+        $demande_action->user_id        = Auth::user()->id;
+        $demande_action->demande_id     = $this->demande->id;
+        $demande_action->label          = 'Le '.$this->current_agent_demande->role_code.' de la demande a été marqué comme terminé par '.Auth::user()->name;
+        $demande_action->color          = 'primary';
+        $demande_action->save();
+        setupFlash( "Action enregistrée avec succès", 'success');
 
         return redirect(request()->header('Referer'));
 

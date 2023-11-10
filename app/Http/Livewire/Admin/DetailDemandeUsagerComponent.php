@@ -46,6 +46,8 @@ class DetailDemandeUsagerComponent extends Component
             $this->demande->documents[$key]->save();
         }
         //$this->files->store('documents');
+        setupFlash( "Documents  enregistrés avec succès", 'success');
+
         return redirect(request()->header('Referer'));
 
     }
