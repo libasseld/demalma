@@ -5,7 +5,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="banner-1"
-                                style="background-image:url(template-assets/imgs/page/homepage1/banner.png)">
+                                style="background-image:url(template-assets/imgs/page/homepage1/banner-2.jpg)" >
                                 <div class="container">
                                     <div class="row align-items-center">
                                         <div class="col-lg-12">
@@ -18,7 +18,7 @@
                                                 Nous les réalisons á votre place</p>
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <p class="font-md color-white mb-20 wow animate__animated animate__fadeInUp"
+                                                    <p class="mb-20 font-md color-white wow animate__animated animate__fadeInUp"
                                                         data-wow-delay=".0s">
                                                         Création et modification d’entreprise, formalisation légale de
                                                         société, documents de nationalité au Tribunal,
@@ -27,7 +27,7 @@
                                                 </div>
                                             </div>
                                             <div class="box-button mt-30"><a
-                                                    class="btn btn-brand-1-big hover-up mr-40 wow animate__animated animate__fadeInUp"
+                                                    class="mr-40 btn btn-brand-1-big hover-up wow animate__animated animate__fadeInUp"
                                                     href="#">Ajouter une demande</a><a
                                                     class="btn btn-play popup-youtube hover-up wow animate__animated animate__fadeInUp"
                                                     href="https://www.youtube.com/watch?v=kCGf5uNE13I"><img
@@ -53,7 +53,7 @@
                                                 & Trusted Transport<br class="d-none d-lg-block">Logistic Company</h1>
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <p class="font-md color-white mb-20 wow animate__animated animate__fadeInUp"
+                                                    <p class="mb-20 font-md color-white wow animate__animated animate__fadeInUp"
                                                         data-wow-delay=".0s">Our experienced team of problem solvers and
                                                         a commitment to always
                                                         align with our client’s business goals and objectives is what
@@ -61,7 +61,7 @@
                                                 </div>
                                             </div>
                                             <div class="box-button mt-30"><a
-                                                    class="btn btn-brand-1-big hover-up mr-40 wow animate__animated animate__fadeInUp"
+                                                    class="mr-40 btn btn-brand-1-big hover-up wow animate__animated animate__fadeInUp"
                                                     href="#">Calculate Package</a><a
                                                     class="btn btn-play popup-youtube hover-up wow animate__animated animate__fadeInUp"
                                                     href="https://www.youtube.com/watch?v=kCGf5uNE13I"><img
@@ -81,14 +81,14 @@
         <div class="section bg-2 pt-65 pb-35">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-3 mb-30 text-center text-lg-start wow animate__animated animate__fadeIn">
+                    <div class="text-center col-lg-3 mb-30 text-lg-start wow animate__animated animate__fadeIn">
                         <p class="font-2xl-bold color-brand-2">We are<span class="color-brand-1"> trusted</span> by
                             major global
                             brands</p>
                     </div>
                     <div class="col-lg-9 mb-30">
                         <div class="box-swiper">
-                            <div class="swiper-container swiper-group-6 pb-0">
+                            <div class="pb-0 swiper-container swiper-group-6">
                                 <div class="swiper-wrapper wow animate__animated animate__fadeIn">
                                     <div class="swiper-slide"><img
                                             src="{{ asset('template-assets/imgs/slider/logo/alea.png') }}"
@@ -121,7 +121,7 @@
         </div>
         <section class="section mt-100">
             <div class="container">
-                <h2 class="title-favicon mb-20 wow animate__animated animate__fadeIn">Pourquoi choisir Demalma ?</h2>
+                <h2 class="mb-20 title-favicon wow animate__animated animate__fadeIn">Pourquoi choisir Demalma ?</h2>
                 <div class="row align-items-end">
                     <div class="col-lg-8 col-md-8 mb-30">
                         <p class="font-md color-gray-700 wow animate__animated animate__fadeIn">La solution pour vos formalités de citoyenneté.</p>
@@ -344,10 +344,10 @@
                                 </ul>
                             </div>
                             
-                            <div class="mt-20"><a class="btn btn-brand-2 mr-20 wow animate__animated animate__fadeIn"
+                            <div class="mt-20"><a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
                                 href="{{route('nous-contacter')}}">Nous contacter</a><a
                                 class="btn btn-link-medium wow animate__animated animate__fadeIn" href="#">En savoir plus 
-                                <svg class="w-6 h-6 icon-16 ml-5" fill="none" stroke="currentColor"
+                                <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
                                     viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -363,8 +363,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                        {{--  <span class="btn btn-tag wow animate__animated animate__fadeIn">Get in touch</span> --}}
-                        <h3 class="color-grey-900 mb-20 mt-15 wow animate__animated animate__fadeIn">Pour vous Partout ici....</h3>
-                        <p class="font-md color-grey-900 mb-40 wow animate__animated animate__fadeIn">
+                        <h3 class="mb-20 color-grey-900 mt-15 wow animate__animated animate__fadeIn">Pour vous Partout ici....</h3>
+                        <p class="mb-40 font-md color-grey-900 wow animate__animated animate__fadeIn">
                             Une solution digitale, intelligente qui centralise plus de 50 types de demandes, de plus de 20 services administratifs 
                             différents sur un seul espace, une seule plateforme… Nous vous informons, nous vous représentons, nous réalisons, 
                             nous suivons, nous retirons et nous vous livrons vos documents partout où vous en aurez besoin tout Simplement….
@@ -388,10 +388,10 @@
                                     hand-crafted templates.</p>
                             </div> --}}
                         </div>
-                        <div class="mt-20"><a class="btn btn-brand-2 mr-20 wow animate__animated animate__fadeIn"
+                        <div class="mt-20"><a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
                                 href="{{route('nous-contacter')}}">Nous Contacter</a><a
                                 class="btn btn-link-medium wow animate__animated animate__fadeIn" href="#">En savoir plus
-                                <svg class="w-6 h-6 icon-16 ml-5" fill="none" stroke="currentColor"
+                                <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
                                     viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -406,7 +406,7 @@
             <div class="container">
                 <div class="text-center"><img class="mb-15"
                         src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp">
-                    <h2 class="color-brand-2 mb-20 wow animate__animated animate__fadeIn">Comment ça marche ?s</h2>
+                    <h2 class="mb-20 color-brand-2 wow animate__animated animate__fadeIn">Comment ça marche ?s</h2>
                     <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">
                         Choisissez l'offre qui vous correspond, ajouter votre demande en soumettant vos informations dans le formulaire. Puis, payez pour confirmer votre demande. 
                     </p>
@@ -433,7 +433,9 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mb-30">
-                        <ul class="list-how-works">
+                        <img class="m-auto" src="{{ asset('template-assets/imgs/page/homepage1/process-demalma.svg') }}"
+                                            alt="transp">
+                        {{-- <ul class="list-how-works">
                             <li>
                                 <div class="image-how"><span class="img"><img
                                             src="{{ asset('template-assets/imgs/page/homepage1/order.png') }}"
@@ -480,14 +482,14 @@
                                     <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Vos documents vous seront livré chez vous !</p>
                                 </div>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
         </section>
         <section class="section mt-50 bg-customers-say">
             <div class="container">
-                <h2 class="title-favicon color-white mb-20 title-padding-left wow animate__animated animate__fadeIn">
+                <h2 class="mb-20 title-favicon color-white title-padding-left wow animate__animated animate__fadeIn">
                     Ce que disent nos clients</h2>
                 <p class="font-lg color-white pl-55 wow animate__animated animate__fadeIn">Témoignages Clients </p>
             </div>
@@ -618,7 +620,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="box-faqs-left">
-                            <h2 class="title-favicon mb-20 wow animate__animated animate__fadeIn">FAQs</h2>
+                            <h2 class="mb-20 title-favicon wow animate__animated animate__fadeIn">FAQs</h2>
                             <p class="font-md color-grey-700 mb-50 wow animate__animated animate__fadeIn">
                                 Vous vous sentez curieux ? Lisez certaines de nos FAQ ou contactez nos supporters pour obtenir de l'aide.
                             </p>
@@ -742,11 +744,11 @@
                             <div class="line-border mt-50 mb-50"></div>
                             <h3 class="color-brand-2 wow animate__animated animate__fadeIn">Besoin de plus d'aide?</h3>
                             <div class="mt-20"><a
-                                    class="btn btn-brand-1-big mr-20 wow animate__animated animate__fadeIn"
+                                    class="mr-20 btn btn-brand-1-big wow animate__animated animate__fadeIn"
                                     href="{{route('nous-contacter')}}">Nous Contacter</a><a
                                     class="btn btn-link-medium wow animate__animated animate__fadeIn"
                                     href="#">En savoir plus
-                                    <svg class="w-6 h-6 icon-16 ml-5" fill="none" stroke="currentColor"
+                                    <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
                                         viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -761,7 +763,7 @@
             <div class="container">
                 <div class="box-get-quote">
                     <div class="get-quote-left">
-                        <p class="font-3xl color-white mb-10 wow animate__animated animate__fadeIn">Vous avez des idées en tête ?</p>
+                        <p class="mb-10 font-3xl color-white wow animate__animated animate__fadeIn">Vous avez des idées en tête ?</p>
                         <h2 class="color-brand-1 wow animate__animated animate__fadeIn">
                            Nous sommes là pour gérer toutes vos démarches administratives
                         </h2>
@@ -790,8 +792,8 @@
                         <p class="color-grey-700 mb-25 wow animate__animated animate__fadeIn">
                             3, rue assane ndoye x Berenger Feraud, Dakar
                         </p>
-                        <p class="color-grey-700 mb-10 wow animate__animated animate__fadeIn">
-                            <svg class="icon-16 mr-10 color-brand-1" fill="none" stroke="currentColor"
+                        <p class="mb-10 color-grey-700 wow animate__animated animate__fadeIn">
+                            <svg class="mr-10 icon-16 color-brand-1" fill="none" stroke="currentColor"
                                 stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -800,7 +802,7 @@
                             </svg>+221 77 281 43 43
                         </p>
                         <p class="color-grey-700 mb-30 wow animate__animated animate__fadeIn">
-                            <svg class="icon-16 mr-10 color-brand-1" fill="none" stroke="currentColor"
+                            <svg class="mr-10 icon-16 color-brand-1" fill="none" stroke="currentColor"
                                 stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
