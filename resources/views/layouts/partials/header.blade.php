@@ -1,7 +1,7 @@
 @php
     use App\Models\CategorieOffre;
     use App\Models\Reseausocial;
-    
+
     $categories_offres = CategorieOffre::with(['offres'])->get();
     $reseaux_sociaux = Reseausocial::get();
 @endphp
@@ -28,14 +28,14 @@
                             d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
                         </path>
                     </svg>contact@groupe-demalma.com</a></div>
-                <div class="col-lg-5 col-md-4 col-sm-7 col-8 text-end">
-                    @foreach ($reseaux_sociaux as $item)
-                        <a class="icon-socials text-white" href="{{$item->url}}" title="{{$item->name}}">
-                            <i class="{{$item->icone}} mr-2"></i> {{--  --}}
-                        </a>
-                    @endforeach
-                    
-                </div>
+            <div class="col-lg-5 col-md-4 col-sm-7 col-8 text-end">
+                @foreach ($reseaux_sociaux as $item)
+                    <a class="text-white icon-socials" href="{{ $item->url }}" title="{{ $item->name }}">
+                        <i class="{{ $item->icone }} mr-2"></i> {{--  --}}
+                    </a>
+                @endforeach
+
+            </div>
         </div>
     </div>
 </div>
@@ -51,23 +51,31 @@
 
                             <li class="active"><a href="{{ route('home') }}" class="active">Accueil</a></li>
                             <li class="has-children"><a href="#">Services</a>
-                                <div class="sub-menu five-col">
-                                    @foreach ($categories_offres as $category)
-                                        <div class="menu-col">
-                                            <h6 class="color-brand-2 mb-15">{{ $category->name }}</h6>
-                                            {{--  <div class="menu-image"><img
-                                                src="{{ asset('template-assets/imgs/page/homepage1/menu1.png') }}"
-                                                alt="transp"></div> --}}
-                                            <ul class="megamenu">
+                                <div class="sub-menu ">
+                                    <div class="left-items">
+                                        @foreach ($categories_offres as $category)
+                                            <div class="menu-col vw_drop_doown" data-ulid="{{ $category->id }}">
+                                                <h6 class="color-brand-2 mb-15">{{ $category->name }}</h6>
+                                                {{--  <div class="menu-image"><img
+                                            src="{{ asset('template-assets/imgs/page/homepage1/menu1.png') }}"
+                                            alt="transp"></div> --}}
+
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <div class="megamenu-items ">
+                                        @foreach ($categories_offres as $category)
+                                            <div class="hidden-vw_dddrop_doown megamenu"
+                                                id="vwdropdoown{{ $category->id }}">
                                                 @foreach ($category->offres as $service)
-                                                    <li>
-                                                        <a
-                                                            href="{{ route('service-details', ['categorie_slug' => $category->slug, 'offre_slug' => $service->slug]) }}">{{ $service->designation }}</a>
-                                                    </li>
+                                                        <a class="megamenu-item"
+                                                            href="{{ route('service-details', ['categorie_slug' => $category->slug, 'offre_slug' => $service->slug]) }}"><img
+                                                            src="{{ asset('template-assets/imgs/page/homepage1/menu1.png') }}"
+                                                            alt="transp" class="menu-image"> {{ $service->designation }}</a>
                                                 @endforeach
-                                            </ul>
-                                        </div>
-                                    @endforeach
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </li>
                             <li><a href="{{ route('qui-sommes-nous') }}">Qui sommes nous?</a></li>
@@ -80,7 +88,7 @@
                 </div>
                 <div class="header-right">
 
-                    <div class="d-none d-sm-inline-block"><a class="btn btn-default mr-10 hover-up"
+                    <div class="d-none d-sm-inline-block"><a class="mr-10 btn btn-default hover-up"
                             href="{{ route('login') }}">Se connecter</a><a
                             class="btn btn-brand-1 d-none d-xl-inline-block hover-up" href="request-a-quote.html">
                             <svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"
@@ -148,7 +156,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="site-copyright color-grey-400 mt-0">
+                <div class="mt-0 site-copyright color-grey-400">
                     <div class="box-download-app">
                         <p class="font-xs color-grey-900 mb-25">Download our Apps and get extra 15% Discount on your
                             first Order…!
