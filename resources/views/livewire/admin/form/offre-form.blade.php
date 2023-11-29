@@ -3,15 +3,15 @@
         <form class="space-y-5" enctype="multipart/form-data">
             @csrf
 
-            <div class="absolute z-40 inset-x-0" wire:loading.block wire:target="keyword">
+            <div class="absolute inset-x-0 z-40" wire:loading.block wire:target="keyword">
                 <div wire:loading.delay.longest class="w-full">
-                    <div class="animate-pulse p-4">
+                    <div class="p-4 animate-pulse">
                         <div class="py-1">
-                            <div class="h-3 bg-gray-300 rounded w-5/6"></div>
-                            <div class="mt-4 w-1/3">
+                            <div class="w-5/6 h-3 bg-gray-300 rounded"></div>
+                            <div class="w-1/3 mt-4">
                                 <div class="grid grid-cols-3 gap-2">
-                                    <div class="h-3 bg-gray-300 rounded col-span-1"></div>
-                                    <div class="h-3 bg-gray-300 rounded col-span-2"></div>
+                                    <div class="h-3 col-span-1 bg-gray-300 rounded"></div>
+                                    <div class="h-3 col-span-2 bg-gray-300 rounded"></div>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
 
                 <div class="flex justify-between">
                     <div class="w-full mr-2">
-                        <label for="offre.montant">Montant en F CFA</label>
+                        <label for="offre.montant">Montant tout frais compris (administratif , demalma & livraison) en F CFA</label>
                         <input id="offre.montant" type="number"
                             placeholder="Montant " wire:model="offre.montant"
                             class="form-input" />
@@ -72,10 +72,23 @@
                 @enderror
 
             </div>
+            <div class="flex justify-between">
+                <div class="w-full mr-2">
+                    <label for="offre.conditions">Conditions / NB </label>
+                    <textarea id="offre.conditions" type="number"
+                    placeholder="Conditions " wire:model="offre.conditions"
+                    class="form-input" id=""  rows="2"></textarea>
+                    
+                    @error('offre.conditions')
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                    @enderror
+                </div>
+               
+            </div>
 
 
            
-            <div class="col-span-6 lg:col-span-2 flex items-center justify-center">
+            <div class="flex items-center justify-center col-span-6 lg:col-span-2">
                 <div class="mb-6">
                     <label class="block text-center" {{-- x-data="showImage()" --}}>
                         <span class="sr-only">Choisissez un fichier File</span>
@@ -100,7 +113,7 @@
                         <div class="mb-3">
                             <input type="file" class="hidden " wire:model="image" accept="image/jpg, image/jpeg, image/png" id="select-photo">
                             <label for="select-photo"
-                                class="btn flex justify-center w-full text-sm font-bold mr-4 py-2 px-4 rounded-md border-0 font-semibold bg-blue-100 text-blue-900 hover:bg-blue-300">
+                                class="flex justify-center w-full px-4 py-2 mr-4 text-sm font-semibold font-bold text-blue-900 bg-blue-100 border-0 rounded-md btn hover:bg-blue-300">
                                 Selectionner votre logo ou photo
                                 <span wire:ignore><i data-feather="image" class="w-4 ml-2"></i></span>
                             </label>
@@ -128,7 +141,7 @@
                         <thead>
                             <tr>
                                 <th>Libellé document</th>
-                                <th>Type de document</th>
+                                <th>Document Physique</th>
                                 
                                 <th class="text-center">Action </th>
                             </tr>
@@ -140,7 +153,7 @@
                             <td class="whitespace-nowrap {{ $item['obligatoire'] == 1 ? 'text-success' :  'text-danger' }}">{{$item['obligatoire']== 1 ?  'Obligatoire' : 'non obligatoire' }}</td>
                             <td>
                                 <button type="button" wire:click="removeDocument({{$key}})" class="btn btn-danger "  x-tooltip="Supprimer">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="m-auto h-3 w-3">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 m-auto">
                                         <path d="M20.5001 6H3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                                         <path d="M18.8334 8.5L18.3735 15.3991C18.1965 18.054 18.108 19.3815 17.243 20.1907C16.378 21 15.0476 21 12.3868 21H11.6134C8.9526 21 7.6222 21 6.75719 20.1907C5.89218 19.3815 5.80368 18.054 5.62669 15.3991L5.16675 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                                         <path opacity="0.5" d="M9.5 11L10 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
@@ -156,8 +169,8 @@
                     </table>
                 </div>
             </div>
-            <div class="w-full flex-col">
-                <div class="w-full flex">
+            <div class="flex-col w-full">
+                <div class="flex w-full">
                     <div class="w-3/6 px-2">
                         <label for="nom_document">Nom du document</label>
                         <input id="nom_document" type="text"
@@ -165,24 +178,25 @@
                             class="form-input " />
                     </div>
                     <div class="w-2/6 px-2">
-                        <label for="">Le document est-il obligatoire</label>
+                        <label for="">Le document phyique est-il obligatoire</label>
                         <select wire:model="document_obligatoire" class="form-input" id="type" name="type_vehicule">
                             <option value="1">Oui, c'est obligatoire</option>
                             <option value="0">Non, c'est pas obligatoire</option>
                             
                         </select>
                     </div>
-                    <div class="w-1/6 flex justify-start items-end">
-                        <button type="button" wire:click="addDocument" class="btn btn-primary h-10" class="h-8">
+                    <div class="flex items-end justify-start w-1/6">
+                        <button type="button" wire:click="addDocument" class="h-10 btn btn-primary" class="h-8">
                             <span wire:ignore><i data-feather="plus" class="h-4"></i></span>
+                            
                         </button>
                     </div>
                             
                 </div>
             </div>
-            <div class="col-span-2 flex justify-end  mt-2">
+            <div class="flex justify-end col-span-2 mt-2">
                 <button type="button" wire:click="save"
-                    class="btn py-2 px-4 bg-slate-800 text-slate-50 ">Enregistrer</button>
+                    class="px-4 py-2 btn bg-slate-800 text-slate-50 ">Enregistrer</button>
             </div>
         </form>
     </div>

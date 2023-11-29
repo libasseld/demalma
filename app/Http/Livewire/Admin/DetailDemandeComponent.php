@@ -96,6 +96,8 @@ class DetailDemandeComponent extends Component
                     $color          = $this->colors[$role];
                     save_demande_action($user_id, $demande_id, $label, $color);
                 }
+                $this->demande->etat = 1;
+                $this->demande->save();
             }   
         }
         setupFlash( "Dispatching enregistré avec succès", 'success');
@@ -147,6 +149,10 @@ class DetailDemandeComponent extends Component
         $this->current_agent_demande->save();
         if($this->demande->pourcentage < $pourcentage){
             $this->demande->pourcentage = $pourcentage;
+            $this->demande->save();
+        }
+        if($this->current_agent_demande->role_code == 'traitement'){
+            $this->demande->etat = 2;
             $this->demande->save();
         }
         $demande_action = new DemandeActions();

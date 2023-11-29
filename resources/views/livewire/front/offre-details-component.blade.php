@@ -1,7 +1,7 @@
 <div>
     <section class="section">
         <div class="container">
-            <div class="box-pageheader-1 box-pageheader-services text-center">
+            <div class="text-center box-pageheader-1 box-pageheader-services">
                 <span class="btn btn-tag wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;"> Service : {{$categorie->name}}</span>
                 
                 {{-- <p class="font-md color-grey-900 wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
@@ -13,10 +13,10 @@
             </div>
         </div>
     </section>
-    <div class="w-4/5 mx-auto border-solid border-1 border-pink-200 flex p-0 mb-12 rounded-xl">
-        <div class="left-card w-full lg:w-1/3 px-4 pb-4 bg-offre-left border-r-2 border-pink-700 border-solid border-r-4 border-opacity-100 rounded-l-xl">
+    <div class="flex w-4/5 p-0 mx-auto mb-12 border-pink-200 border-solid border-1 rounded-xl">
+        <div class="w-full px-4 pb-4 border-r-2 border-r-4 border-pink-700 border-opacity-100 border-solid left-card lg:w-1/3 bg-offre-left rounded-l-xl">
             <div>
-                <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" class="h-36 m-auto" alt="">
+                <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" class="m-auto h-36" alt="">
             </div>
             <div class="mt-2">
                 <h6>Description :</h6>
@@ -24,8 +24,16 @@
             </div>
             <div class="mt-2">
                 <h6>Montant du service</h6>
-                {!! $offre->montant !!}
+                {{ $offre->montant }}
             </div>
+            @if (!empty($offre->conditions))
+            <div class="p-2 mt-2 text-red-600 bg-white">
+              <h6>Conditions : </h6>
+                <p class="italic font-bold ">
+                  {{ $offre->conditions }}
+                </p>
+            </div>
+            @endif
             <div class="mt-2">
                 <h6>Documents à fournir :</h6>
                 <ul>
@@ -34,14 +42,14 @@
                             <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            {{$document->libelle}} ({{$document->obligatoire == 1 ? 'obligatoire' : 'facultatif'}})
+                            {{$document->libelle}} (Document physique {{$document->obligatoire == 1 ? 'obligatoire' : 'facultatif'}})
                         </li>
                     @endforeach
                 </ul>
             </div>
         </div>
-        <div class="right-card w-full lg:w-2/3 pr-10 pl-5 py-4 rounded-r-xl font-3xl">
-            <h2 class="color-brand-2 mt-0 mb-10 wow animate__ animate__fadeIn animated text-center" style="visibility: visible; animation-name: fadeIn;">{{$offre->designation}}</h2>
+        <div class="w-full py-4 pl-5 pr-10 right-card lg:w-2/3 rounded-r-xl font-3xl">
+            <h2 class="mt-0 mb-10 text-center color-brand-2 wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">{{$offre->designation}}</h2>
             <div class="w-full px-4">
                 <form wire:submit.prevent='addDemande'>
                     <div class="row">
@@ -79,7 +87,7 @@
                       </div>
                       <div class="col-md-6 col-sm-12">
                         <div class="form-group">
-                          <select aria-placeholder="djddjj"  class="form-control py-0" name="" id="pays_id" wire:model="pays_id">
+                          <select aria-placeholder="djddjj"  class="py-0 form-control" name="" id="pays_id" wire:model="pays_id">
                               <option value="">Sélectionner un pays *</option>
                               @foreach($pays as $item) 
                                 <option value="{{$item->id}}">{{$item->name}}</option>
@@ -110,7 +118,7 @@
                       <div class="col-md-6 col-sm-12">
                         <div class="form-group">
                           <label for="">Quand souhaitez vous réaliser votre démarche ?</label>
-                          <select aria-placeholder=""  class="form-control py-0" name="" id="demarrage" wire:model="demarrage">
+                          <select aria-placeholder=""  class="py-0 form-control" name="" id="demarrage" wire:model="demarrage">
                               @foreach($demarrage_demandes as $item) 
                                 <option value="{{$item}}">{{$item}}</option>
                               @endforeach
@@ -130,7 +138,7 @@
                           @enderror
                         </div>
                       </div>
-                      <div class="col-md-12 col-sm-12 justify-center">
+                      <div class="justify-center col-md-12 col-sm-12">
                         <input class="btn btn-brand-1-big" type="submit" value="Envoyer la demande">
                         
                       </div>
@@ -139,4 +147,15 @@
             </div>
         </div>
     </div>
+    @if (!empty($offre->conditions))
+    <script>
+      addEventListener("DOMContentLoaded", (event) => {
+        let message  = @json($offre->conditions);
+        setTimeout(() => {
+          Swal.fire("Conditions de service", message, "warning");
+        }, 1000);
+      });
+  </script>
+    @endif
+      
 </div>

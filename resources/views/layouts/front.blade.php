@@ -187,6 +187,60 @@
         .position-relative {
             position: relative !important;
         }
+
+        .sub-menu-item {
+            float: left;
+        }
+
+        .sub-menu-item a {
+
+            margin: 5px;
+            display: block;
+            padding: 8px 20px !important;
+        }
+
+        .sub-menu-item .all-subs {
+            display: none;
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            left: 0;
+        }
+
+        .sub-menu-item .sub-items {
+            float: left;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+            justify-content: center;
+            border-top: 3px solid #c71587;
+            position: relative;
+            top: -2px;
+            gap: 5px 12px;
+            /* box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12); */
+            box-shadow: 0px 10px 42px rgba(1, 9, 20, 0.06);
+            border-radius: 0px 0px 15px 15px;
+        }
+
+        .sub-menu-item:hover>a {
+            background-color: #c71586;
+            color: #fff !important;
+        }
+
+        .sub-menu-item:hover>.all-subs {
+            display: block;
+        }
+        .banner-1::after{
+            content: "";
+    position: absolute;
+    background: url({{asset('template-assets/imgs/wave.svg')}}) bottom /100% auto;
+    background-repeat: no-repeat;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 7rem;
+        }
     </style>
 </head>
 
@@ -244,74 +298,33 @@
             @endphp
         </script>
     @endif
-    <style>
-        .hidden-vw_drop_doown {
-            display: none !important;
-        }
-        .sub-menu {
-            align-items: center;
-        }
-
-        .megamenu {
-            position: relative;
-            opacity: 1;
-            visibility: visible;
-            display: flex;
-            top: auto;
-            left: auto;
-            background: transparent;
-            border: 0px;
-            box-shadow: none;
-            display: flex;
-            flex-wrap: wrap;
-            width:100%;
-        }
-
-        .left-items {
-            display: flex;
-            flex-direction: column;
-            min-width: 210px;
-        }
-        .megamenu-items{
-            
-        }
-        .megamenu-item {
-            padding: 12px !important;
-            display: flex !important;
-            align-items: center !important;
-            background: #f4d9ea;
-            border-radius: 10px;
-            justify-content: center;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            }
-            .megamenu-item:hover{
-                background: rgb(198, 31, 139);
-                color: #FFFFFF !important;
-            }
-        .menu-col{
-            padding: 5px 5px;
-        }
-        .menu-image{
-            height: 20px;
-            margin-right: 5px;
-        }
-    </style>
+    
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             let items = document.querySelectorAll('.vw_drop_doown')
             items.forEach(element => {
-                let ul = document.getElementById(`vwdropdoown${element.dataset.ulid}`)
+                let element_id = element.dataset.ulid;
+                let class_to_remove = document.getElementById(`vwdropdoown${element_id}`)
                 element.onmouseover = function() {
-                    ul.classList.remove("hidden-vw_drop_doown");
+                    let elems = document.querySelectorAll(`.vwdropdoown${element_id}`)
+                    //console.log(elems);
+                    elems.forEach(sub_element => {
+                        sub_element.classList.remove("hidden-vw_drop_doown");
+                    });
+
                 }
                 element.onmouseout = function() {
-                    console.log(ul);
-                    ul.classList.add("hidden-vw_drop_doown");
+                    let elems = document.querySelectorAll('.vwdropdoown'.element_id)
+                    console.log(elems);
+                    elems.forEach(sub_element => {
+                        sub_element.classList.add("hidden-vw_drop_doown");
+                    });
                 }
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
 </body>
 
 

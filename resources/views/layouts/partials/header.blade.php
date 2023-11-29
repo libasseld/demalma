@@ -2,7 +2,7 @@
     use App\Models\CategorieOffre;
     use App\Models\Reseausocial;
 
-    $categories_offres = CategorieOffre::with(['offres'])->get();
+    $categories_offres = CategorieOffre::with(['offres'])->whereHas('offres')->get();
     $reseaux_sociaux = Reseausocial::get();
 @endphp
 <div id="preloader-active">
@@ -52,23 +52,20 @@
                             <li class="active"><a href="{{ route('home') }}" class="active">Accueil</a></li>
                             <li class="has-children"><a href="#">Services</a>
                                 <div class="sub-menu ">
-                                    <div class="left-items">
+                                    {{-- <div class="left-items">
                                         @foreach ($categories_offres as $category)
                                             <div class="menu-col vw_drop_doown" data-ulid="{{ $category->id }}">
                                                 <h6 class="color-brand-2 mb-15">{{ $category->name }}</h6>
-                                                {{--  <div class="menu-image"><img
-                                            src="{{ asset('template-assets/imgs/page/homepage1/menu1.png') }}"
-                                            alt="transp"></div> --}}
+                                                
 
                                             </div>
                                         @endforeach
                                     </div>
                                     <div class="megamenu-items ">
                                         @foreach ($categories_offres as $category)
-                                            <div class="hidden-vw_dddrop_doown megamenu"
-                                                id="vwdropdoown{{ $category->id }}">
+                                            <div class=" megamenu">
                                                 @foreach ($category->offres as $service)
-                                                        <a class="megamenu-item"
+                                                        <a class="megamenu-item hidden-vw_drop_doown vwdropdoown{{ $category->id }}" 
                                                             href="{{ route('service-details', ['categorie_slug' => $category->slug, 'offre_slug' => $service->slug]) }}">
                                                             <img
                                                             src="{{ asset($service->image_url ? 'storage/' . $service->image_url : 'storage/card-images/offre_profil.png') }}"
@@ -76,7 +73,33 @@
                                                 @endforeach
                                             </div>
                                         @endforeach
+                                    </div> --}}
+                                    @foreach ($categories_offres as $category)
+                                    <div class="sub-menu-item">
+                                        <a href="#">{{ $category->name }}</a>
+                                        <div class="all-subs">
+                                            <div class="sub-items">
+                                                {{-- <h2>{{ $category->name }}</h2> --}}
+                                                
+                                                   
+                                                
+                                                @foreach ($category->offres as $service)
+                                                <div class="sub-item">
+                                                        <a class="megamenu-item  vwdropdoown{{ $category->id }}" 
+                                                            href="{{ route('service-details', ['categorie_slug' => $category->slug, 'offre_slug' => $service->slug]) }}">
+                                                            <img
+                                                            src="{{ asset($service->image_url ? 'storage/' . $service->image_url : 'storage/card-images/offre_profil.png') }}"
+                                                            alt="transp" class="menu-image"> {{ $service->designation }}</a>
+                                                            
+                                                        </div>
+                                                        
+                                                @endforeach
+                                            </div>
+                                            
+                            
+                                        </div>
                                     </div>
+                                    @endforeach
                                 </div>
                             </li>
                             <li><a href="{{ route('qui-sommes-nous') }}">Qui sommes nous?</a></li>

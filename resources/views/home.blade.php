@@ -5,7 +5,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="banner-1"
-                                style="background-image:url(template-assets/imgs/page/homepage1/banner-2.jpg)" >
+                                style="background-image:url(template-assets/imgs/page/homepage1/banner-2.jpg)">
                                 <div class="container">
                                     <div class="row align-items-center">
                                         <div class="col-lg-12">
@@ -15,20 +15,22 @@
                                             </h1>
                                             <p class="font-md color-white mb-15 wow animate__animated animate__fadeIn"
                                                 data-wow-delay=".0s">
-                                                Nous les réalisons á votre place</p>
+                                                Nous les réalisons á votre place.</p>
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <p class="mb-20 font-md color-white wow animate__animated animate__fadeInUp"
                                                         data-wow-delay=".0s">
                                                         Création et modification d’entreprise, formalisation légale de
-                                                        société, documents de nationalité au Tribunal,
-                                                        autorisation d’ouverture d’école privées, titre de séjour, et
-                                                        bien d’autres services...</p>
+                                                        société, demande de nationalité,
+                                                        mutation de véhicule, autorisation d’ouverture d’école privées,
+                                                        autorisation FRA,
+                                                        et bien d’autres services qui ne demandent pas votre présence
+                                                        physique…</p>
                                                 </div>
                                             </div>
                                             <div class="box-button mt-30"><a
                                                     class="mr-40 btn btn-brand-1-big hover-up wow animate__animated animate__fadeInUp"
-                                                    href="#">Ajouter une demande</a><a
+                                                    href="#">Commencez votre démarche</a><a
                                                     class="btn btn-play popup-youtube hover-up wow animate__animated animate__fadeInUp"
                                                     href="https://www.youtube.com/watch?v=kCGf5uNE13I"><img
                                                         class="wow animate__animated animate__fadeInUp"
@@ -78,40 +80,77 @@
                 </div>
             </div>
         </section>
-        <div class="section bg-2 pt-65 pb-35">
+        <div class="section pt-65 pb-35">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="text-center col-lg-3 mb-30 text-lg-start wow animate__animated animate__fadeIn">
-                        <p class="font-2xl-bold color-brand-2">We are<span class="color-brand-1"> trusted</span> by
-                            major global
-                            brands</p>
+                        <p class="font-2xl-bold color-brand-2">Nous nous déplaçons pour vous,<span class="color-brand-1"> ici et ailleurs</span> </p>
                     </div>
                     <div class="col-lg-9 mb-30">
                         <div class="box-swiper">
                             <div class="pb-0 swiper-container swiper-group-6">
                                 <div class="swiper-wrapper wow animate__animated animate__fadeIn">
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('template-assets/imgs/slider/logo/alea.png') }}"
-                                            alt="transp">
-                                    </div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('template-assets/imgs/slider/logo/land.png') }}"
-                                            alt="transp">
-                                    </div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('template-assets/imgs/slider/logo/logis.png') }}"
-                                            alt="transp">
-                                    </div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('template-assets/imgs/slider/logo/truck.png') }}"
-                                            alt="transp">
-                                    </div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('template-assets/imgs/slider/logo/saltos.png') }}"
-                                            alt="transp"></div>
-                                    <div class="swiper-slide"><img
-                                            src="{{ asset('template-assets/imgs/slider/logo/creati.png') }}"
-                                            alt="transp"></div>
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-1.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-2.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-3.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-4.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-5.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-6.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-7.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-8.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-9.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-10.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-11.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-12.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-13.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-14.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-15.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-16.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-23.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-24.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-25.png') }}" alt="transp">
+                                </div>
+                                 <div class="swiper-slide">
+                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-26.png') }}" alt="transp">
+                                </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -119,15 +158,66 @@
                 </div>
             </div>
         </div>
+        <section class="bg-gray-100 slider-section">
+            @php
+                $categorie_offres = \App\Models\CategorieOffre::whereHas('offres')
+                    ->with('offres')
+                    ->get();
+
+            @endphp
+            <div class="slide-content">
+                <swiper-container class="swiper-services-container" navigation="true">
+                    @foreach ($categorie_offres as $categorie)
+                        <swiper-slide>
+                            <div class="swiper-item">
+                                <div>
+                                    <h2 class="swiper-title">
+                                        {{ $categorie->texte_accroche }}
+                                    </h2>
+                                    <p class="mt-2 swiper-description">
+                                        {{ $categorie->description }}
+                                    </p>
+                                    <div class="slider-btn-container">
+                                        <a class="btn btn-brand-1 hover-up"
+                            href="{{route('nos-services')}}">
+                            
+                                Commencer ma démarche</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="slider-title">{{$categorie->name}}</h2>
+                                    <div class="img-box">
+                                        
+                                        @foreach ($categorie->offres as $item)
+                                            <a href="{{ route('service-details', ['categorie_slug' => $categorie->slug, 'offre_slug' => $item->slug]) }}"
+                                                class="img-box-item">
+                                                <div class="mt-2 img-box-item-div">
+                                                    <img src="{{ asset($item->image_url ? 'storage/' . $item->image_url : 'storage/card-images/offre_profil.png') }}"
+                                                        alt="">
+                                                    <p>{{ $item->designation }}</p>
+                                                </div>
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                    @endforeach
+                </swiper-container>
+
+            </div>
+        </section>
         <section class="section mt-100">
             <div class="container">
-                <h2 class="mb-20 title-favicon wow animate__animated animate__fadeIn">Pourquoi choisir Demalma ?</h2>
+                <h2 class="mb-20 text-center title-favicon wow animate__animated animate__fadeIn">Pourquoi choisir
+                    Demalma ?</h2>
                 <div class="row align-items-end">
                     <div class="col-lg-8 col-md-8 mb-30">
-                        <p class="font-md color-gray-700 wow animate__animated animate__fadeIn">La solution pour vos formalités de citoyenneté.</p>
+                        <p class="font-md color-gray-700 wow animate__animated animate__fadeIn">La solution pour vos
+                            formalités de citoyenneté.</p>
                     </div>
                     <div class="col-lg-4 col-md-4 mb-30 text-md-end text-start"><a class="btn btn-brand-1 hover-up"
-                            href="request-a-quote.html">
+                            href="{{route('nos-services')}}">
                             <svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -140,17 +230,18 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeIn">
                             <div class="card-offer hover-up">
-                               {{--  <div class="card-image"><img
+                                {{--  <div class="card-image"><img
                                         src="{{ asset('template-assets/imgs/page/homepage1/cargo-ship.png') }}"
                                         alt="transp"></div> --}}
                                 <div class="card-info">
                                     <h5 class="color-brand-2 mb-15">Un service Professionnel et efficace.
 
                                     </h5>
-                                    <p class="font-sm color-grey-900 mb-35">Nous nous engageons á vous servir! <br>
+                                    <p class="font-sm color-grey-900 mb-35">Une approche basée sur la maitrise des
+                                        procédures. <br>
 
                                         Des experts pour réaliser vos démarches avec efficacité.</p>
-                                   {{--  <div class="box-button-offer mb-30"><a
+                                    {{--  <div class="box-button-offer mb-30"><a
                                             class="btn btn-link font-sm color-brand-2">View Details<span>
                                                 <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
                                                     viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -167,9 +258,12 @@
                                         alt="transp">
                                 </div> --}}
                                 <div class="card-info">
-                                    <h5 class="color-brand-2 mb-15">Nous nous engageons á vous servir ! </h5>
-                                    <p class="font-sm color-grey-900 mb-35">Nous mettons tous les moyens légaux pour obtenir les résultats attendus sur 
-                                        nos missions. Chez Demalma, nous représentons nos clients, Nous sommes nos clients.</p>
+                                    <h5 class="color-brand-2 mb-15">Nous nous engageons á vous servir légalement ! </h5>
+                                    <p class="font-sm color-grey-900 mb-35">Nous mettons tous les moyens légaux pour
+                                        obtenir les résultats attendus sur nos missions.
+                                        Chez Demalma, nous représentons nos clients dans les dispositions prévues par la
+                                        loi.
+                                    </p>
                                     {{-- <div class="box-button-offer mb-30"><a
                                             class="btn btn-link font-sm color-brand-2">View Details<span>
                                                 <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
@@ -187,8 +281,10 @@
                                         alt="transp">
                                 </div> --}}
                                 <div class="card-info">
-                                    <h5 class="color-brand-2 mb-15">Confort, Sécurité et gain de temps.</h5>
-                                    <p class="font-sm color-grey-900 mb-35">Ne vous déplacez pas ! concentrez vous sur vos activités ! Économisez du temps. Restez zen. Nous vous simplifions la vie administrative.</p>
+                                    <h5 class="color-brand-2 mb-15">Confort, sécurité et gain de temps !</h5>
+                                    <p class="font-sm color-grey-900 mb-35">Ne vous déplacez pas ! Ne vous fatiguez
+                                        pas, Gardez votre temps pour vous ! Concentrez vous sur vos activités ! Restez
+                                        zen ! Nous vous simplifions la vie administrative.</p>
                                     {{-- <div class="box-button-offer mb-30"><a
                                             class="btn btn-link font-sm color-brand-2">View Details<span>
                                                 <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
@@ -265,14 +361,16 @@
                 </div>
             </div>
         </section>
-        <section class="section mt-85">
+{{--         <section class="section mt-85">
             <div class="container">
                 <div class="text-center"><img class="mb-15"
                         src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp">
-                   {{--  <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Nous serions heureux de répondre á vos attentes
-</p> --}}
-                    <h2 class="color-brand-2 mb-65 mt-15 wow animate__animated animate__fadeIn">Nous serions heureux de 
-                        <br class="d-none d-lg-block">répondre á vos attentes.</h2>
+                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Nous serions heureux de
+                        répondre á vos attentes
+                    </p>
+                    <h2 class="color-brand-2 mb-65 mt-15 wow animate__animated animate__fadeIn">Nous serions heureux de
+                        <br class="d-none d-lg-block">répondre á vos attentes.
+                    </h2>
                 </div>
                 <div class="row mt-50 align-items-center">
                     <div class="col-xl-7 col-lg-6 mb-30">
@@ -287,96 +385,123 @@
                     </div>
                     <div class="col-xl-5 col-lg-6 mb-30">
                         <div class="box-info-pround">
-                            {{-- <h3 class="color-brand-2 mb-15 wow animate__animated animate__fadeIn">Fast shipping with
+                            <h3 class="color-brand-2 mb-15 wow animate__animated animate__fadeIn">Fast shipping with
                                 the
                                 most modern
-                                technology</h3> --}}
+                                technology</h3>
                             <p class="font-md color-grey-500 wow animate__animated animate__fadeIn">
-                                Pionnier des démarches administratives en ligne au Sénégal, DEMALMA a réalisé des centaines de formalités et de 
-                                livraisons de documents administratifs pour des clients particuliers et entreprises établis au Sénégal ou á l’étranger. 
-                                Avec la solution Demalma, nous vous avons centralisé plusieurs démarches sur une seule et même plateforme.</p>
+                                Pionnier des démarches administratives en ligne au Sénégal, DEMALMA a réalisé des
+                                centaines de formalités et de
+                                livraisons de documents administratifs pour des clients particuliers et entreprises
+                                établis au Sénégal ou á l’étranger.
+                                Avec la solution Demalma, nous vous avons centralisé plusieurs démarches sur une seule
+                                et même plateforme.</p>
                             <div class="mt-30">
                                 <ul class="list-ticks">
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Citoyenneté et nationalité
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Création d’entreprise
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Formalisation d’entreprise
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         vous manquez de disponibilité
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>vous etes établi à l'étranger
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>vous avez la phobie administrative confiez-nous le gros du travail
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>Gagnez en efficacité
                                     </li>
                                     <li class="wow animate__animated animate__fadeIn">
-                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
+                                            viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>Abonnez vous à la serenité
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="mt-20"><a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
-                                href="{{route('nous-contacter')}}">Nous contacter</a><a
-                                class="btn btn-link-medium wow animate__animated animate__fadeIn" href="#">En savoir plus 
-                                <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
-                                    viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3">
-                                    </path>
-                                </svg></a></div>
+                                    href="{{ route('nous-contacter') }}">Nous contacter</a><a
+                                    class="btn btn-link-medium wow animate__animated animate__fadeIn"
+                                    href="#">En savoir plus
+                                    <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
+                                        viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        </path>
+                                    </svg></a></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="section mt-55 bg-1 position-relative pt-90 pb-90">
+        </section> --}}
+        <section class="section mt-55 bg-1 position-relative pt-90 pb-90 background-dark">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
-                       {{--  <span class="btn btn-tag wow animate__animated animate__fadeIn">Get in touch</span> --}}
-                        <h3 class="mb-20 color-grey-900 mt-15 wow animate__animated animate__fadeIn">Pour vous Partout ici....</h3>
-                        <p class="mb-40 font-md color-grey-900 wow animate__animated animate__fadeIn">
-                            Une solution digitale, intelligente qui centralise plus de 50 types de demandes, de plus de 20 services administratifs 
-                            différents sur un seul espace, une seule plateforme… Nous vous informons, nous vous représentons, nous réalisons, 
-                            nous suivons, nous retirons et nous vous livrons vos documents partout où vous en aurez besoin tout Simplement….
+                    <div class="col-lg-6 text-block-section-4">
+                        {{--  <span class="btn btn-tag wow animate__animated animate__fadeIn">Get in touch</span> --}}
+                        <h3 class="mb-20 color-grey-100 mt-15 wow animate__animated animate__fadeIn">Pour vous Partout
+                            ici....</h3>
+                        <p class="mb-40 font-md color-grey-100 wow animate__animated animate__fadeIn">
+                            Une solution digitale, intelligente qui centralise plus de 50 types de demandes, de plus de
+                            20 services administratifs
+                            différents sur un seul espace, une seule plateforme… Nous vous informons, nous vous
+                            représentons, nous réalisons,
+                            nous suivons, nous retirons et nous vous livrons vos documents partout où vous en aurez
+                            besoin tout Simplement….
                         </p>
                         <div class="row">
                             <div class="col-lg-12 mb-30">
                                 <h6
-                                    class="chart-title font-md-bold color-grey-900 wow animate__animated animate__fadeIn">
+                                    class="chart-title font-md-bold color-grey-100 wow animate__animated animate__fadeIn">
                                     Laissez-vous accompagner</h6>
-                                <p class="font-xs color-grey-900 wow animate__animated animate__fadeIn">Envie d’obtenir les conseils d’experts ?</p>
-                                <p class="font-xs color-grey-900 wow animate__animated animate__fadeIn">Envie d’avoir des réponses de juristes á vos questions ?</p>
-                                <p class="font-xs color-grey-900 wow animate__animated animate__fadeIn">Envie d’être informés de l’état d’avancement de votre dossier ?</p>
+                                <p class="font-xs color-grey-100 wow animate__animated animate__fadeIn">Envie d’obtenir
+                                    les conseils d’experts ?</p>
+                                <p class="font-xs color-grey-100 wow animate__animated animate__fadeIn">Envie d’avoir
+                                    des réponses de juristes á vos questions ?</p>
+                                <p class="font-xs color-grey-100 wow animate__animated animate__fadeIn">Envie d’être
+                                    informés de l’état d’avancement de votre dossier ?</p>
                             </div>
                             {{-- <div class="col-lg-6 mb-30">
                                 <h6
@@ -389,8 +514,9 @@
                             </div> --}}
                         </div>
                         <div class="mt-20"><a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
-                                href="{{route('nous-contacter')}}">Nous Contacter</a><a
-                                class="btn btn-link-medium wow animate__animated animate__fadeIn" href="#">En savoir plus
+                                href="{{ route('nous-contacter') }}">Nous Contacter</a><a
+                                class="text-white btn btn-link-medium wow animate__animated animate__fadeIn" href="#">En
+                                savoir plus
                                 <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
                                     viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -406,9 +532,10 @@
             <div class="container">
                 <div class="text-center"><img class="mb-15"
                         src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp">
-                    <h2 class="mb-20 color-brand-2 wow animate__animated animate__fadeIn">Comment ça marche ?s</h2>
+                    <h2 class="mb-20 color-brand-2 wow animate__animated animate__fadeIn">Comment ça marche ?</h2>
                     <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">
-                        Choisissez l'offre qui vous correspond, ajouter votre demande en soumettant vos informations dans le formulaire. Puis, payez pour confirmer votre demande. 
+                        Choisissez l'offre qui vous correspond, ajouter votre demande en soumettant vos informations
+                        dans le formulaire. Puis, payez pour confirmer votre demande.
                     </p>
                 </div>
                 <div class="row mt-50">
@@ -426,15 +553,17 @@
                                         de l'expérience en
                                         cette passion</h4>
                                     <p class="font-sm color-white wow animate__animated animate__fadeIn">
-                                        Nous sommes conscients des différentes variations qui peuvent avoir dans les démarches administratives et vous porteront conseil sur les procédures.
+                                        Nous sommes conscients des différentes variations qui peuvent avoir dans les
+                                        démarches administratives et vous porteront conseil sur les procédures.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mb-30">
-                        <img class="m-auto" src="{{ asset('template-assets/imgs/page/homepage1/process-demalma.svg') }}"
-                                            alt="transp">
+                        <img class="m-auto"
+                            src="{{ asset('template-assets/imgs/page/homepage1/process-demalma.svg') }}"
+                            alt="transp">
                         {{-- <ul class="list-how-works">
                             <li>
                                 <div class="image-how"><span class="img"><img
@@ -613,16 +742,17 @@
                 </div>
             </div>
         </section>
-      
-    
-        <section class="section pt-80 mb-70 bg-faqs">
+
+
+        <section class="py-8 section pt-80 mb-70 bg-faqs background-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="box-faqs-left">
-                            <h2 class="mb-20 title-favicon wow animate__animated animate__fadeIn">FAQs</h2>
-                            <p class="font-md color-grey-700 mb-50 wow animate__animated animate__fadeIn">
-                                Vous vous sentez curieux ? Lisez certaines de nos FAQ ou contactez nos supporters pour obtenir de l'aide.
+                            <h2 class="mb-20 color-grey-100 title-favicon wow animate__animated animate__fadeIn">FAQs</h2>
+                            <p class="font-md color-grey-200 mb-50 wow animate__animated animate__fadeIn">
+                                Vous vous sentez curieux ? Lisez certaines de nos FAQ ou contactez nos supporters pour
+                                obtenir de l'aide.
                             </p>
                             <div class="box-gallery-faqs">
                                 <div class="image-top"><img
@@ -745,8 +875,8 @@
                             <h3 class="color-brand-2 wow animate__animated animate__fadeIn">Besoin de plus d'aide?</h3>
                             <div class="mt-20"><a
                                     class="mr-20 btn btn-brand-1-big wow animate__animated animate__fadeIn"
-                                    href="{{route('nous-contacter')}}">Nous Contacter</a><a
-                                    class="btn btn-link-medium wow animate__animated animate__fadeIn"
+                                    href="{{ route('nous-contacter') }}">Nous Contacter</a><a
+                                    class="btn btn-link-medium wow color-grey-100 animate__animated animate__fadeIn"
                                     href="#">En savoir plus
                                     <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
                                         viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -763,13 +893,14 @@
             <div class="container">
                 <div class="box-get-quote">
                     <div class="get-quote-left">
-                        <p class="mb-10 font-3xl color-white wow animate__animated animate__fadeIn">Vous avez des idées en tête ?</p>
+                        <p class="mb-10 font-3xl color-white wow animate__animated animate__fadeIn">Vous avez des idées
+                            en tête ?</p>
                         <h2 class="color-brand-1 wow animate__animated animate__fadeIn">
-                           Nous sommes là pour gérer toutes vos démarches administratives
+                            Nous sommes là pour gérer toutes vos démarches administratives
                         </h2>
                     </div>
                     <div class="get-quote-right"><a class="btn btn-get-quote wow animate__animated animate__fadeIn"
-                            href="request-a-quote.html">
+                            href="{{route('nos-services')}}">
                             <svg class="mr-10" fill="none" stroke="currentColor" stroke-width="1.5"
                                 viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -779,8 +910,8 @@
                 </div>
             </div>
         </section>
-        
-        <div class="section bg-map d-block">
+
+        <div class="section bg-map d-block pt-70 pb-70">
             <div class="container">
                 <div class="box-map">
                     <iframe class="wow animate__animated animate__fadeIn"
@@ -788,7 +919,8 @@
                         height="420" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div class="map-info"><img class="mb-25 wow animate__animated animate__fadeIn"
-                            src="{{ asset('template-assets/imgs/template/logo-demalma.svg') }}" height="20" alt="transp">
+                            src="{{ asset('template-assets/imgs/template/logo-demalma.svg') }}" height="20"
+                            alt="transp">
                         <p class="color-grey-700 mb-25 wow animate__animated animate__fadeIn">
                             3, rue assane ndoye x Berenger Feraud, Dakar
                         </p>

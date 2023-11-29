@@ -34,7 +34,7 @@ class DemandesComponent extends Component
     }
     public function render()
     {
-        $query = Demande::with(['offre', 'pays']);
+        $query = Demande::with(['offre', 'pays'])->where('etat', $this->etat_demande);
         if (Auth::user()->role->code == 'admin' || Auth::user()->role->code == 'superviseur'){
             //$query->where('user_id', Auth::user()->id);
         }elseif (Auth::user()->role->code == 'usager'){
@@ -44,6 +44,7 @@ class DemandesComponent extends Component
                 $query->where('user_id', Auth::user()->id);
             });
         }
+
         return view(
             'livewire.admin.demandes-component',
             ['items' => $query->where(function ($q) {

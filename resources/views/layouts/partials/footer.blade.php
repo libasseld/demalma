@@ -5,6 +5,9 @@ $reseaux_sociaux = Reseausocial::get();
 
 @endphp
 <footer class="footer">
+    <div class="footer-svg">
+        
+    </div>
     <div class="footer-1">
         <div class="container font-xs">
             <div class="row">
@@ -18,13 +21,13 @@ $reseaux_sociaux = Reseausocial::get();
                     <h6 class="color-brand-1">Suivez Nous</h6>
                     <div class="mt-15"> 
                          @foreach ($reseaux_sociaux as $item)
-                            <a class="icon-socials text-white" href="{{$item->url}}" title="{{$item->name}}">
+                            <a class="text-white icon-socials" href="{{$item->url}}" title="{{$item->name}}">
                                 <i class="{{$item->icone}} "></i> {{--  --}}
                             </a>
                         @endforeach
                     </div>
                 </div>
-                <div class="col-lg-4 width-25 text-center mb-30">
+                <div class="text-center col-lg-4 width-25 mb-30">
                     <h5 class="mb-10 color-brand-1">Démalma</h5>
                     <ul class="menu-footer width-100">
                         <li><a href="{{route('home')}}">Accueil</a></li>
@@ -33,7 +36,7 @@ $reseaux_sociaux = Reseausocial::get();
                         <li><a href="{{route('nous-contacter')}}">Nous contacter</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 width-25 text-center mb-30">
+                <div class="text-center col-lg-4 width-25 mb-30">
                     <h5 class="mb-10 color-brand-1">Lien Utiles</h5>
                     <ul class="menu-footer width-100">
                         <li><a href="#">Conditions de services</a></li>
@@ -94,10 +97,10 @@ $reseaux_sociaux = Reseausocial::get();
         <div class="container">
             <div class="footer-bottom">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 text-center text-lg-start"><span
+                    <div class="text-center col-lg-6 col-md-12 text-lg-start"><span
                             class="color-grey-300 font-md">©WebMaster Agency
                              {{date('Y')}}. All right reversed.</span></div>
-                    <div class="col-lg-6 col-md-12 text-center text-lg-end">
+                    <div class="text-center col-lg-6 col-md-12 text-lg-end">
                         <ul class="menu-bottom">
                             <li><a class="font-sm color-grey-300" href="term-conditions.html">Conditions de services</a>
                             </li>

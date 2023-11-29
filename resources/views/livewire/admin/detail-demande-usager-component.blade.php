@@ -3,7 +3,7 @@
         <!-- start main content section -->
 
        {{--  <div class="grid grid-cols-3 gap-3">
-            <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-2">
+            <div class="p-2 mt-4 border-2 border-gray-100 rounded-md shadow-xl panel-white">
                 <table>
                     <tr>
                         <th class="text-left">Nom : </th>
@@ -23,12 +23,12 @@
                     </tr>
                 </table>
             </div>
-            <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-2">
+            <div class="p-2 mt-4 border-2 border-gray-100 rounded-md shadow-xl panel-white">
             </div>
-            <div class="panel-white rounded-md mt-4 shadow-xl border-gray-100 border-2 p-4 ">
+            <div class="p-4 mt-4 border-2 border-gray-100 rounded-md shadow-xl panel-white ">
                 @if (Auth::user()->role->code == 'superviseur' || !empty($current_agent_demande))
                     @if ($current_agent_demande && $current_agent_demande->acceptee == 0)
-                        <div class="h-full flex flex-col justify-center">
+                        <div class="flex flex-col justify-center h-full">
                             <div class="text-center">
                                 Cette demande vous a été affecté, acceptez-vous traiter cette demande?
                             </div>
@@ -82,7 +82,7 @@
 
                     @if (Auth::user()->role->code == 'superviseur')
                         <button type="button" wire:click="$set('show_modal_agents', true)"
-                            class="btn btn-warning btn-sm mt-2 float-right">Modifier</button>
+                            class="float-right mt-2 btn btn-warning btn-sm">Modifier</button>
                     @endif
                 @endif
             </div>
@@ -94,17 +94,17 @@
                     <h5 class="text-lg font-semibold dark:text-white-light">Documents</h5>
                     <div class="mx-auto max-w-[900px]">
                         @foreach ($demande->documents as $key => $item)
-                        <div class=" bg-slate-200 p-4 m-2 rounded-lg">
+                        <div class="p-4 m-2 rounded-lg bg-slate-200">
                             @if (empty($item->doc_url) || $doc_to_edit == $item->id)
                             <p class="text-lg font-bold">{{$item->name}}</p>
 
                             <div class="relative mt-4">
-                                <label title="Click to upload" for="button_upload{{$key}}" class="cursor-pointer flex items-center gap-4 px-6 py-4 before:border-gray-400/60 hover:before:border-gray-300 group dark:before:bg-darker dark:hover:before:border-gray-500 before:bg-gray-100 dark:before:border-gray-600 before:absolute before:inset-0 before:rounded-3xl before:border before:border-dashed before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
-                                    <div class="w-max relative">
+                                <label title="Click to upload" for="button_upload{{$key}}" class="flex items-center gap-4 px-6 py-4 cursor-pointer before:border-gray-400/60 hover:before:border-gray-300 group dark:before:bg-darker dark:hover:before:border-gray-500 before:bg-gray-100 dark:before:border-gray-600 before:absolute before:inset-0 before:rounded-3xl before:border before:border-dashed before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                                    <div class="relative w-max">
                                         <img class="w-6" src="https://www.svgrepo.com/show/485545/upload-cicle.svg" alt="file upload icon" width="512" height="512">
                                     </div>
                                     <div class="relative">
-                                        <span class="block text-base font-semibold relative text-blue-900 dark:text-white group-hover:text-blue-500">
+                                        <span class="relative block text-base font-semibold text-blue-900 dark:text-white group-hover:text-blue-500">
                                             Charger un fichier <i>(Max 2MB)</i>
                                         </span>
                                         
@@ -113,7 +113,7 @@
                                   <input hidden="" type="file" name="button_upload{{$key}}" wire:model="files.{{ $key }}" {{-- wire:change="upload_file( {{$item->id}}, {{$key}})" --}} id="button_upload{{$key}}">
                             </div>
                             @else
-                                <div class="bg-slate-50 rounded-md px-4 py-2 flex justify-between">
+                                <div class="flex justify-between px-4 py-2 rounded-md bg-slate-50">
                                     <div class="flex items-center">
                                         <div class="grid h-8 w-8 place-content-center rounded-md border border-white-dark/20 dark:border-[#191e3a]">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +127,7 @@
                                         <p class="ml-2 font-bold">{{$item->name}}</p>
                                     </div>
                                     <div class="flex">
-                                        <a href="{{asset('storage/'.$item->doc_url)}}" target="_blank" class="btn btn-primary btn-sm mr-2">Consulter</a>
+                                        <a href="{{asset('storage/'.$item->doc_url)}}" target="_blank" class="mr-2 btn btn-primary btn-sm">Consulter</a>
                                         <button type="button" class="btn btn-warning btn-sm" wire:click="$set('doc_to_edit', {{$item->id}})">Mettre à jour</button>
                                     </div>
                                 </div>

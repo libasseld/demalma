@@ -46,9 +46,9 @@ class Demande extends BaseModel
     }
     public function getPourcentageWidthAttribute() {
         if($this->pourcentage <25){
-            return 'w-1/4';
+            return 'w-1/6';
         }elseif($this->pourcentage >25 && $this->pourcentage <50){
-            return 'w-2/4';
+            return 'w-1/2';
         }elseif($this->pourcentage >50 && $this->pourcentage <75){
             return 'w-3/4';
         }elseif($this->pourcentage >75){

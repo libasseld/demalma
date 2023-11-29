@@ -1,7 +1,7 @@
 @foreach ($categories_offres as $category)
     <section class="section mt-100">
         <div class="container">
-            <h2 class="title-favicon mb-20 wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">{{ $category->name }}</h2>
+            <h2 class="mb-20 title-favicon wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">{{ $category->name }}</h2>
            {{--  <div class="row align-items-end">
                 <div class="col-lg-8 col-md-8 mb-30">
                     <p class="font-md color-gray-700 wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
@@ -20,18 +20,18 @@
             </div> --}}
             <div class="mt-20 box-background-offer">
                 <div class="bg-under"></div>
-                <div class="row justify-center">
+                <div class="justify-center row">
                     @if (count($category->offres) < 4)
                     @foreach ($category->offres as $offre)
                     <div class="col-lg-3 col-md-6 wow animate__ animate__fadeIn animated"
                         style="visibility: visible; animation-name: fadeIn;">
-                        <div class="card-offer hover-up">
+                        <div class="card-offer-services hover-up">
                             <div class="card-image">
                                 <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" alt="{{$offre->slug}}">
                             </div>
                             <div class="card-info">
                                 <h5 class="color-brand-2 mb-15">{{$offre->designation}}</h5>
-                                <p class="font-sm color-grey-900 mb-35">{!! $offre->description !!}</p>
+                                <p class="mb-5 font-sm color-grey-900">{!! $offre->description !!}</p>
                                 <div class="box-button-offer mb-30">
                                     <a class="btn btn-link font-sm color-brand-2" href="{{route('service-details', ['categorie_slug' => $category->slug,'offre_slug' => $offre->slug])}}">
                                         Voir les détails
@@ -78,7 +78,7 @@
                             </div>
                             @endforeach
                           </div>
-                          <div class="box-pagination-customers text-center wow animate__animated animate__fadeIn">
+                          <div class="text-center box-pagination-customers wow animate__animated animate__fadeIn">
                             <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-group-4">
                               <svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true">

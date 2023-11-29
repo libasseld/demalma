@@ -38,6 +38,7 @@ class OffreForm extends Component
             'offre.categorie_offre_id'      => 'required|integer',
             'offre.montant'                 => 'required|integer',
             'offre.description'             => 'required|string',
+            'offre.conditions'             => 'string',
         ];
     }
     

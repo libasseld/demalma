@@ -21,6 +21,8 @@ class CategoriesOffreComponent extends Component
     {
         return [
             'categorie_offre.name' => 'string|required|unique:categorie_offres,name,'.$this->categorie_offre->id,
+            'categorie_offre.texte_accroche' => 'string',
+            'categorie_offre.description' => 'string',
         ];
     }
     public function mount(){
