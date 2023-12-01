@@ -1,4 +1,4 @@
-<div class="ppb_wrapper  ">
+<div class="ppb_wrapper ">
     <div class="one withsmallpadding ppb_car_search_background parallax withbg "
         style="padding-top: 150px !important;text-align:center;height:800px;background-image:url(template-assets/upload/IMG_3496bfree.jpg);background-position: center center;color:#ffffff;">
         <div class="overlay_background" style="background:#000000;background:rgb(0,0,0,0.2);background:rgba(0,0,0,0.2);">
@@ -68,9 +68,9 @@
         <div class="page_content_wrapper page_main_content sidebar_content full_width fixed_column">
             <div class="standard_wrapper">
                 <div id="15722572661666401717"
-                    class="portfolio_filter_wrapper gallery grid portrait three_cols" data-columns="3">
-                    <div class="element grid classic3_cols animated4">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    class="grid portfolio_filter_wrapper gallery portrait three_cols" data-columns="3">
+                    <div class="grid element classic3_cols animated4">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/Mercedes-C-Class-Estate-1.jpg);">
                             <a class="car_image" href="{{route('e-parking')}}?marque=1"></a>
                             <div class="portfolio_info_wrapper">
@@ -78,8 +78,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="element grid classic3_cols animated2">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated2">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/bmw-3-series-sedan-wallpaper-1920x1200-05.jpg);">
                             <a class="car_image" href="{{route('e-parking')}}?marque=1"></a>
                             <div class="portfolio_info_wrapper">
@@ -87,8 +87,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="element grid classic3_cols animated1">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated1">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/hyundai.jpg);">
                             <a class="car_image" href="{{route('e-parking')}}?marque=1"></a>
                             <div class="portfolio_info_wrapper">
@@ -97,8 +97,8 @@
                         </div>
                     </div>
                    
-                    <div class="element grid classic3_cols animated3">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated3">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/jeep.jpg);">
                             <a class="car_image" href="{{route('e-parking')}}?marque=1"></a>
                             <div class="portfolio_info_wrapper">
@@ -107,8 +107,8 @@
                         </div>
                     </div>
                     
-                    <div class="element grid classic3_cols animated5">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated5">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/kia-sportage.jpg);">
                             <a class="car_image" href="{{route('e-parking')}}?marque=1"></a>
                             <div class="portfolio_info_wrapper">
@@ -116,8 +116,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="element grid classic3_cols animated6">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated6">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/ford.jpg);">
                             <a class="car_image" href="{{route('e-parking')}}?marque=1"></a>
                             <div class="portfolio_info_wrapper">
@@ -178,7 +178,7 @@
                         <p>
                             Avec 200 voitures de particuliers et de professionnels à Dakar, nous vous donnons accès à une voiture en quelques clics, où vous voulez, quand vous voulez.
                         </p>
-                        <a href="{{route('e-parking')}}" class="button mt-2" data-text="Contactez-nous"><span>Réservez directement</span></a>
+                        <a href="{{route('e-parking')}}" class="mt-2 button" data-text="Contactez-nous"><span>Réservez directement</span></a>
 
                 </div>
             </div>
@@ -223,7 +223,7 @@
                                 choisir le modèle de voiture adapté à votre voyage.
                             </li>
                         </ul>
-                        <a href="{{route('nous-contacter')}}" class="button mt-2" data-text="Contactez-nous"><span>Contactez-nous</span></a>
+                        <a href="{{route('nous-contacter')}}" class="mt-2 button" data-text="Contactez-nous"><span>Contactez-nous</span></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
@@ -282,7 +282,7 @@
                                 Désert de Lompoul
                             </li>
                         </ul>
-                        <a href="{{route('nous-contacter')}}" class="button mt-2" data-text="Contactez-nous"><span>Contactez-nous</span></a>
+                        <a href="{{route('nous-contacter')}}" class="mt-2 button" data-text="Contactez-nous"><span>Contactez-nous</span></a>
 
                 </div>
             </div>
@@ -296,7 +296,7 @@
             <div class="inner">
                 <div style="margin:auto;width:100%">
                     <h2 class="ppb_title" style="">La liberté de flexibilité</h2>
-                    <div class="page_tagline mb-4" style="">
+                    <div class="mb-4 page_tagline" style="">
                         Obtenez le type exact de véhicule pour votre voyage et réservez-le pour les heures
                         (ou les jours) où vous en avez réellement besoin.
                     </div>
@@ -309,10 +309,10 @@
         <div class="page_content_wrapper page_main_content sidebar_content full_width fixed_column">
             <div class="standard_wrapper">
                 <div id="1572257266780950625"
-                    class="portfolio_filter_wrapper gallery grid portrait three_cols" data-columns="3">
+                    class="grid portfolio_filter_wrapper gallery portrait three_cols" data-columns="3">
                     
-                    <div class="element grid classic3_cols animated2">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated2">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/blog-1.jpg);">
                             <a class="car_image" href="{{ route('page-1') }}"></a>
                             <div class="portfolio_info_wrapper">
@@ -320,8 +320,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="element grid classic3_cols animated3">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated3">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/blog-2.jpg);">
                             <a class="car_image" href="{{ route('page-2') }}"></a>
                             <div class="portfolio_info_wrapper">
@@ -329,8 +329,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="element grid classic3_cols animated1">
-                        <div class="one_third gallery3 grid static filterable portfolio_type themeborder"
+                    <div class="grid element classic3_cols animated1">
+                        <div class="static grid one_third gallery3 filterable portfolio_type themeborder"
                             style="background-image:url(template-assets/upload/blog-3.jpg);">
                             <a class="car_image" href="{{ route('page-3') }}"></a>
                             <div class="portfolio_info_wrapper">
@@ -460,13 +460,13 @@
                         <div class="blog_grid_wrapper sidebar_content full_width ppb_blog_posts">
                             <div id="post-18" class="post type-post hentry status-publish ">
                                 <div class="post_wrapper grid_layout">
-                                    <div class="post_img small static">
+                                    <div class="static post_img small">
                                         <a href="#">
                                             <img src="upload/nw6xremkxkg-nicolai-berntsen-960x636.jpg" alt="What To Do if Your Rental Car Has Met With An Accident" class="" />
                                         </a>
                                     </div>
                                     <div class="post_header_wrapper">
-                                        <div class="post_header grid">
+                                        <div class="grid post_header">
                                             <div class="post_detail single_post">
                                                 <span class="post_info_date">
      <a href="#" title="What To Do if Your Rental Car Has Met With An Accident">January 12, 2017</a>
@@ -483,13 +483,13 @@
                             </div>
                             <div id="post-29" class="post type-post hentry status-publish ">
                                 <div class="post_wrapper grid_layout">
-                                    <div class="post_img small static">
+                                    <div class="static post_img small">
                                         <a href="#">
                                             <img src="upload/IMG_3496bfree-960x636.jpg" alt="On The Trail of 6 Best Foods in North America" class="" />
                                         </a>
                                     </div>
                                     <div class="post_header_wrapper">
-                                        <div class="post_header grid">
+                                        <div class="grid post_header">
                                             <div class="post_detail single_post">
                                                 <span class="post_info_date">
      <a href="#" title="On The Trail of 6 Best Foods in North America">January 10, 2017</a>
@@ -506,13 +506,13 @@
                             </div>
                             <div id="post-36" class="post type-post hentry status-publish last">
                                 <div class="post_wrapper grid_layout">
-                                    <div class="post_img small static">
+                                    <div class="static post_img small">
                                         <a href="#">
                                             <img src="upload/pexels-photo-2-960x636.jpg" alt="Demalma Mistakes That Can Cost You Big" class="" />
                                         </a>
                                     </div>
                                     <div class="post_header_wrapper">
-                                        <div class="post_header grid">
+                                        <div class="grid post_header">
                                             <div class="post_detail single_post">
                                                 <span class="post_info_date">
      <a href="#" title="Demalma Mistakes That Can Cost You Big">January 9, 2017</a>

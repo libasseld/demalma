@@ -11,7 +11,7 @@ $reseaux_sociaux = Reseausocial::get();
     <div class="footer-1">
         <div class="container font-xs">
             <div class="row">
-                <div class="col-lg-4 width-25 mb-30">
+                <div class="col-lg-4 mb-30">
                     <div class="mb-20"><img src="{{asset('template-assets/imgs/template/logo-footer.png')}}" class="logo-footer" alt="transp"></div>
                     <p class="mb-20 color-white">
                         Nous sommes nos clients <br>
@@ -27,7 +27,7 @@ $reseaux_sociaux = Reseausocial::get();
                         @endforeach
                     </div>
                 </div>
-                <div class="text-center col-lg-4 width-25 mb-30">
+                <div class="text-center col-lg-4 mb-30">
                     <h5 class="mb-10 color-brand-1">Démalma</h5>
                     <ul class="menu-footer width-100">
                         <li><a href="{{route('home')}}">Accueil</a></li>
@@ -36,7 +36,7 @@ $reseaux_sociaux = Reseausocial::get();
                         <li><a href="{{route('nous-contacter')}}">Nous contacter</a></li>
                     </ul>
                 </div>
-                <div class="text-center col-lg-4 width-25 mb-30">
+                <div class="text-center col-lg-4 mb-30">
                     <h5 class="mb-10 color-brand-1">Lien Utiles</h5>
                     <ul class="menu-footer width-100">
                         <li><a href="#">Conditions de services</a></li>
@@ -45,7 +45,7 @@ $reseaux_sociaux = Reseausocial::get();
                         <li><a href="#">Mon compte</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 width-25 mb-30">
+                <div class="col-lg-4 mb-30">
                     <h5 class="mb-10 color-brand-1">Nous contacter</h5>
                     <ul class="menu-footer width-100">
                         <li>

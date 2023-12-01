@@ -5747,7 +5747,7 @@ footer a {
     top: 48px;
     bottom: 48px;
     right: 38px;
-    max-width: 340px;
+    /* max-width: 340px; */
     z-index: 12;
     background-color: #ffffff;
     padding: 35px 31px;
@@ -6083,11 +6083,11 @@ textarea.form-control {
     display: flex;
 }
 .box-gallery-faqs .image-faq-1 {
-    width: 46%;
+    width: 50%;
     padding: 0px 10px;
 }
 .box-gallery-faqs .image-faq-2 {
-    width: 54%;
+    width: 50%;
     padding: 0px 10px;
 }
 
@@ -6122,7 +6122,7 @@ textarea.form-control {
     bottom: -30px;
     top: 140px;
     left: -100px;
-    right: -100px;
+    right: 0px;
     background: url(../imgs/page/homepage1/bg-offer.png) no-repeat top center;
     z-index: 1;
 }
@@ -8517,4 +8517,40 @@ swiper-slide img {
     width: 100%;
     top: 0;
     height: 95px;
+}
+.icon-16-custom{
+    height: 19px;
+    width: 12px;
+}
+.slider-section{
+    /* background-image: linear-gradient(to bottom right, rgba(7, 5, 19, 1), rgba(30, 14, 74, 1)) !important; */
+}
+@media (max-width: 1400px) {
+    .swiper-item{
+        padding: 15px 20px;
+        flex-direction: column-reverse;
+    }
+    .swiper-item > div {
+        width: 100%;
+    }
+    .swiper-title,
+    .swiper-description{
+        text-align: center;
+    }
+    .swiper-services-container{
+        display: grid;
+    }
+    .slider-btn-container a{
+        margin: auto;
+    }
+    .footer-1 div.text-center{
+        text-align: left !important;
+    }
+    .banner-1::after{
+        display: none;
+    }
+    .title-favicon {
+       
+        height: 40px;
+    }
 }

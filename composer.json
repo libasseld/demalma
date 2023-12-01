@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "barryvdh/laravel-dompdf": "^2.0",
+        "barryvdh/laravel-snappy": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^2.7",
         "laravel/framework": "^10.0",
@@ -14,6 +16,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.11",
         "mckenziearts/laravel-notify": "^2.4",
+        "munafio/chatify": "*",
         "opcodesio/log-viewer": "^3.1",
         "spatie/laravel-medialibrary": "^10.0.0"
     },

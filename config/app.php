@@ -197,8 +197,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
-
+        Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
 
     ],
 
@@ -215,7 +215,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+
 
     ])->toArray(),
 

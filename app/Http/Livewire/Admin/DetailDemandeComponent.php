@@ -10,7 +10,8 @@ use App\Models\User;
 use App\Models\UserDemande;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-
+use Barryvdh\DomPDF\Facade\Pdf;
+    
 class DetailDemandeComponent extends Component
 {
     public $roles = ['traitement','depot','livraison'];

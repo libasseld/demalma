@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PaiementController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,7 @@ Route::middleware([
     
 });
 
+Route::get('/test_pdf', [TestController::class, 'test_pdf'])->name('test_pdf');
 Route::get('/paiement/{demande_id}', [PaiementController::class, 'paytech'])->name('paiement');
 Route::get('/paiement-confirme/{id}', [PaiementController::class, 'paiement_confirme'])->name('paiement_confirme');
 Route::get('/annuler-paiement/{id}', [PaiementController::class, 'annuler_paiement'])->name('annuler_paiement');
