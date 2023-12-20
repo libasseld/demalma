@@ -1,6 +1,63 @@
     <x-front-layout>
         <section class="section d-block">
-            <div class="box-swiper">
+            <div class="banner-1" >
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-7 col-md-12 col-sm-12 banner-1-text">
+                            <h3 class="text-expert">EXPERT EN PROCÉDURE ADMINISTRATIVE</h3>
+                            <h1 class="color-white mb-25 wow animate__animated animate__fadeInUp text-accueil"
+                                data-wow-delay=".0s">Confiez-nous <br>
+
+                                vos démarches
+                                <br class="d-none d-lg-block">
+                                <div class="text-slider-wrapper">
+
+                                    <div class="text-slider">
+                                        <div class="slider-text1">administratives </div>
+                                        <div class="slider-text2">et juridiques.</div>
+                                    </div>
+                                </div>
+
+                            </h1>
+                            <p class="font-md color-white mb-15 wow animate__animated animate__fadeIn"
+                                data-wow-delay=".0s">
+                                Nous les réalisons á votre place.</p>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p class="mb-20 font-md color-white wow animate__animated animate__fadeInUp"
+                                        data-wow-delay=".0s">
+                                        Création et modification d’entreprise, formalisation légale de
+                                        société, demande de nationalité,
+                                        mutation de véhicule, autorisation d’ouverture d’école privées,
+                                        autorisation FRA,
+                                        et bien d’autres services qui ne demandent pas votre présence
+                                        physique…</p>
+                                </div>
+                            </div>
+                            <div class="mt-10 box-button"><a
+                                    class="mr-40 btn btn-brand-1-big hover-up wow animate__animated animate__fadeInUp"
+                                    href="{{route('nos-services')}}">Commencez votre démarche</a><a
+                                    class="btn btn-play popup-youtube hover-up wow animate__animated animate__fadeInUp"
+                                    href="https://www.youtube.com/watch?v=kCGf5uNE13I"><img
+                                        class="wow animate__animated animate__fadeInUp"
+                                        src="{{ asset('template-assets/imgs/template/icons/play.svg') }}"
+                                        alt="">Comment ça marche?</a></div>
+                        </div>
+                        <div class="images-column col-lg-5 col-md-12 col-sm-12">
+                            <div class="inner-column" style="background-image: url(template-assets/imgs/page/homepage1/globe.png);">
+                                <div class="pattern-layer" style="background-image: url(template-assets/imgs/page/homepage1/pattern-1.png);"></div>
+                                <div class="images-outer parallax-scene-1" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+                                    <div class="image" data-depth="0.10" style="transform: translate3d(2.9px, -4.1px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                                        <img src="{{asset('template-assets/imgs/page/homepage1/banner-demalma.png')}}" alt="">
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="box-swiper">
                 <div class="swiper-container swiper-group-1 swiper-banner-1">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -9,9 +66,12 @@
                                 <div class="container">
                                     <div class="row align-items-center">
                                         <div class="col-lg-12">
-                                            <h1 class="color-white mb-25 wow animate__animated animate__fadeInUp"
-                                                data-wow-delay=".0s">Confiez-nous vos Démarches
-                                                <br class="d-none d-lg-block">administratives et juridiques.
+                                            <h3 class="text-expert">EXPERT EN PROCÉDURE ADMINISTRATIVE</h3>
+                                            <h1 class="color-white mb-25 wow animate__animated animate__fadeInUp text-accueil"
+                                                data-wow-delay=".0s">Confiez-nous <br>
+                                                  
+                                                 vos démarches
+                                                <br class="d-none d-lg-block">administratives.
                                             </h1>
                                             <p class="font-md color-white mb-15 wow animate__animated animate__fadeIn"
                                                 data-wow-delay=".0s">
@@ -42,7 +102,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{--  <div class="swiper-slide">
+                         <div class="swiper-slide">
                             <div class="banner-1" style="background-image:url(template-assets/imgs/page/homepage1/banner-2.png)">
                                 <div class="container">
                                     <div class="row align-items-center">
@@ -74,86 +134,145 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                     <div class="swiper-pagination swiper-pagination-banner"></div>
                 </div>
-            </div>
+            </div> --}}
         </section>
         <div class="section pt-65 pb-35">
+
             <div class="container">
+
                 <div class="row align-items-center">
                     <div class="text-center col-lg-3 mb-30 text-lg-start wow animate__animated animate__fadeIn">
-                        <p class="font-2xl-bold color-brand-2">Nous nous déplaçons pour vous,<span class="color-brand-1"> ici et ailleurs</span> </p>
+                        <p class="font-2xl-bold color-brand-2">Nous nous déplaçons pour vous,<span
+                                class="color-brand-1"> ici et ailleurs</span> </p>
                     </div>
                     <div class="col-lg-9 mb-30">
-                        <div class="box-swiper">
-                            <div class="pb-0 swiper-container swiper-group-6">
-                                <div class="swiper-wrapper wow animate__animated animate__fadeIn">
-                                    <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-1.png') }}" alt="transp">
+                        <div class="flex items-start justify-center slick marquee wow animate__animated animate__fadeIn">
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-1.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-2.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-2.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-3.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-3.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-4.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-4.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-5.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-5.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-6.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-6.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-7.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-7.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-8.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-8.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-9.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-9.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-10.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-10.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-11.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-11.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-12.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-12.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-13.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-13.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-14.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-14.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-15.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-15.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-16.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-16.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-23.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-23.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-24.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-24.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-25.png') }}" alt="transp">
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-25.png') }}"
+                                        alt="transp">
                                 </div>
-                                 <div class="swiper-slide">
-                                        <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-26.png') }}" alt="transp">
-                                </div>
-                                
+                            </div>
+                            <div class="slick-slide">
+                                <div class="inner">
+                                    <img src="{{ asset('template-assets/imgs/slider/logo/partenaire-dem-26.png') }}"
+                                        alt="transp">
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -178,16 +297,15 @@
                                         {{ $categorie->description }}
                                     </p>
                                     <div class="slider-btn-container">
-                                        <a class="btn btn-brand-1 hover-up"
-                            href="{{route('nos-services')}}">
-                            
-                                Commencer ma démarche</a>
+                                        <a class="btn btn-brand-1 hover-up" href="{{ route('nos-services') }}">
+
+                                            Commencer ma démarche</a>
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 class="slider-title">{{$categorie->name}}</h2>
+                                    <h2 class="slider-title">{{ $categorie->name }}</h2>
                                     <div class="img-box">
-                                        
+
                                         @foreach ($categorie->offres as $item)
                                             <a href="{{ route('service-details', ['categorie_slug' => $categorie->slug, 'offre_slug' => $item->slug]) }}"
                                                 class="img-box-item">
@@ -213,11 +331,11 @@
                     Demalma ?</h2>
                 <div class="row align-items-end">
                     <div class="col-lg-8 col-md-8 mb-30">
-                        <p class="font-md color-gray-700 wow animate__animated animate__fadeIn">La solution pour vos
-                            formalités de citoyenneté.</p>
+                        {{--  <p class="font-md color-gray-700 wow animate__animated animate__fadeIn">La solution pour vos
+                            formalités de citoyenneté.</p> --}}
                     </div>
                     <div class="col-lg-4 col-md-4 mb-30 text-md-end text-start"><a class="btn btn-brand-1 hover-up"
-                            href="{{route('nos-services')}}">
+                            href="{{ route('nos-services') }}">
                             <svg fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -258,7 +376,8 @@
                                         alt="transp">
                                 </div> --}}
                                 <div class="card-info">
-                                    <h5 class="color-brand-2 mb-15">Nous nous engageons á vous servir légalement ! </h5>
+                                    <h5 class="color-brand-2 mb-15">Nous nous engageons á vous servir légalement !
+                                    </h5>
                                     <p class="font-sm color-grey-900 mb-35">Nous mettons tous les moyens légaux pour
                                         obtenir les résultats attendus sur nos missions.
                                         Chez Demalma, nous représentons nos clients dans les dispositions prévues par la
@@ -361,7 +480,7 @@
                 </div>
             </div>
         </section>
-{{--         <section class="section mt-85">
+        {{--         <section class="section mt-85">
             <div class="container">
                 <div class="text-center"><img class="mb-15"
                         src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp">
@@ -476,7 +595,7 @@
                 </div>
             </div>
         </section> --}}
-        <section class="section mt-55 bg-1 position-relative pt-90 pb-90 background-dark">
+        <section class="section bg-1 position-relative pt-90 pb-90 background-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 text-block-section-4">
@@ -513,9 +632,11 @@
                                     hand-crafted templates.</p>
                             </div> --}}
                         </div>
-                        <div class="mt-20"><a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
-                                href="{{ route('nous-contacter') }}">Nous Contacter</a><a
-                                class="text-white btn btn-link-medium wow animate__animated animate__fadeIn" href="#">En
+                        <div class="mt-20">
+                            <a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
+                                href="{{ route('nous-contacter') }}">Nous Contacter</a>
+                            <a class="text-white btn btn-link-medium wow animate__animated animate__fadeIn"
+                                href="{{route('qui-sommes-nous')}}">En
                                 savoir plus
                                 <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
                                     viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -528,10 +649,33 @@
             </div>
             <div class="box-image-touch"></div>
         </section>
+        <section class="section bg-stats col-lg-12">
+
+            <div class="p-40 row stats-container">
+                <h3 class="text-center text-white col-sm-12">Nos Chiffres Clés</h3>
+                <div class="col-md-3 col-sm-12 border-stat-right">
+                    <p class="stats-title">+350</p>
+                    <p class="stats-content">Clients accompagnés.</p>
+                </div>
+                <div class="col-md-3 col-sm-12 border-stat-right">
+                    <p class="stats-title">+100</p>
+                    <p class="stats-content">Services administratifs où nous nous déplaçons pour vous.</p>
+                </div>
+                <div class="col-md-3 col-sm-12 border-stat-right">
+                    <p class="stats-title">+50</p>
+                    <p class="stats-content">Types de procédures administratives que nous maitrisons.</p>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <p class="stats-title">+08 annéés</p>
+                    <p class="stats-content">D’expertises dans le domaine.</p>
+                </div>
+            </div>
+        </section>
         <section class="section pt-85 bg-worldmap">
             <div class="container">
-                <div class="text-center"><img class="mb-15"
-                        src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp">
+                <div class="text-center">
+                    {{-- <img class="mb-15"
+                        src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp"> --}}
                     <h2 class="mb-20 color-brand-2 wow animate__animated animate__fadeIn">Comment ça marche ?</h2>
                     <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">
                         Choisissez l'offre qui vous correspond, ajouter votre demande en soumettant vos informations
@@ -744,7 +888,7 @@
         </section>
 
 
-        <section class="py-8 section pt-80 mb-70 bg-faqs background-dark">
+        {{--  <section class="py-8 section pt-80 mb-70 bg-faqs background-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -888,19 +1032,30 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="section pt-70 pb-70 bg-get-quote">
-            <div class="container">
+        </section> --}}
+        <section class="relative section pt-70 pb-70 bg-get-quote ">
+            <div class="caption">
+                <div class="text-center caption-content">
+                    <h3>Nous le faisons pour vous</h3>
+                    <p>Vous êtes en activité et vous manquez de disponibilité  ?</p>
+                    <p>Vous êtes sénégalais de la diaspora, loin des services administratifs de votre pays  ?</p>
+                    <p>Vous êtes un expatrié installé au Sénégal et vous ne maitrisez pas toutes les formalités liés á votre séjour ?</p>
+                    <p>Vous avez tout simplement la phobie administrative, vous n’aimez pas faire des démarches administratives ?</p>
+                    <h4 class="mt-4 text-white">Nous sommes là pour gérer toutes vos démarches administratives.</h4>
+                </div>
+            </div>
+            
+            {{-- <div class="container">
                 <div class="box-get-quote">
                     <div class="get-quote-left">
                         <p class="mb-10 font-3xl color-white wow animate__animated animate__fadeIn">Vous avez des idées
                             en tête ?</p>
                         <h2 class="color-brand-1 wow animate__animated animate__fadeIn">
-                            Nous sommes là pour gérer toutes vos démarches administratives
+                           
                         </h2>
                     </div>
                     <div class="get-quote-right"><a class="btn btn-get-quote wow animate__animated animate__fadeIn"
-                            href="{{route('nos-services')}}">
+                            href="{{ route('nos-services') }}">
                             <svg class="mr-10" fill="none" stroke="currentColor" stroke-width="1.5"
                                 viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -908,16 +1063,13 @@
                                 </path>
                             </svg>FAIRE UNE DEMANDE</a></div>
                 </div>
-            </div>
+            </div> --}}
         </section>
-
-        <div class="section bg-map d-block pt-70 pb-70">
+        
+        {{-- <div class="section bg-map d-block pt-70 pb-70">
             <div class="container">
                 <div class="box-map">
-                    <iframe class="wow animate__animated animate__fadeIn"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.780600907912!2d-17.435263893948346!3d14.668388787601293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4a2361013%3A0x645336763322cb54!2s3%20Rue%20Amadou%20Assane%20Ndoye%2C%20Dakar!5e0!3m2!1sfr!2ssn!4v1693095804948!5m2!1sfr!2ssn"
-                        height="420" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
                     <div class="map-info"><img class="mb-25 wow animate__animated animate__fadeIn"
                             src="{{ asset('template-assets/imgs/template/logo-demalma.svg') }}" height="20"
                             alt="transp">
@@ -925,16 +1077,17 @@
                             <svg class="mr-10 icon-16-custom color-brand-1" fill="none" stroke="currentColor"
                                 stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true">
-                                <g stroke-linecap="round" >
-                                    <g transform="translate(-104.000000, -411.000000)" >
-                                        <path 
-                                         d="M116,426 C114.343,426 113,424.657 113,423 C113,421.343 114.343,420 116,420 C117.657,420 119,421.343 119,423 C119,424.657 117.657,426 116,426 L116,426 Z M116,418 C113.239,418 111,420.238 111,423 C111,425.762 113.239,428 116,428 C118.761,428 121,425.762 121,423 C121,420.238 118.761,418 116,418 L116,418 Z M116,440 C114.337,440.009 106,427.181 106,423 C106,417.478 110.477,413 116,413 C121.523,413 126,417.478 126,423 C126,427.125 117.637,440.009 116,440 L116,440 Z M116,411 C109.373,411 104,416.373 104,423 C104,428.018 114.005,443.011 116,443 C117.964,443.011 128,427.95 128,423 C128,416.373 122.627,411 116,411 L116,411 Z" id="location" sketch:type="MSShapeGroup">
-                            
-                            </path>
+                                <g stroke-linecap="round">
+                                    <g transform="translate(-104.000000, -411.000000)">
+                                        <path
+                                            d="M116,426 C114.343,426 113,424.657 113,423 C113,421.343 114.343,420 116,420 C117.657,420 119,421.343 119,423 C119,424.657 117.657,426 116,426 L116,426 Z M116,418 C113.239,418 111,420.238 111,423 C111,425.762 113.239,428 116,428 C118.761,428 121,425.762 121,423 C121,420.238 118.761,418 116,418 L116,418 Z M116,440 C114.337,440.009 106,427.181 106,423 C106,417.478 110.477,413 116,413 C121.523,413 126,417.478 126,423 C126,427.125 117.637,440.009 116,440 L116,440 Z M116,411 C109.373,411 104,416.373 104,423 C104,428.018 114.005,443.011 116,443 C117.964,443.011 128,427.95 128,423 C128,416.373 122.627,411 116,411 L116,411 Z"
+                                            id="location" sketch:type="MSShapeGroup">
+
+                                        </path>
                                     </g>
                                 </g>
                             </svg>3, rue assane ndoye x Berenger Feraud,
-                             Dakar
+                            Dakar
                         </p>
                         <p class="mb-10 color-grey-700 wow animate__animated animate__fadeIn">
                             <svg class="mr-10 icon-16 color-brand-1" fill="none" stroke="currentColor"
@@ -961,5 +1114,48 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
+        <div class="bg-white section d-block">
+            <div class="container">
+              <div class="pb-0 text-white bg-white box-newsletter">
+                <div class="justify-center row">
+                  <div class="col-lg-6 mb-30">
+                    <img src="{{asset('template-assets/imgs/page/homepage1/contact-us-img.png')}}" alt="">
+
+                  </div>
+                  
+                  <div class="col-lg-6 mb-30">
+                    <h3 class="mb-20 color-brand-2 wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">Contactez-nous</h3>
+
+                    <div class="d-flex box-newsletter-right">
+                     
+                      <ul class="list-info-footer">
+                        <li class="wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                          <div class="cardImage"><span class="icon-brand-1"><img src="{{asset('template-assets/imgs/page/homepage2/address.svg')}}" alt="transp"></span></div>
+                          <div class="cardInfo">
+                            <h6 class="font-sm-bold color-grey-900">Adresse</h6>
+                            <p class="font-sm color-grey-900"> 3, rue assane ndoye x Berenger Feraud <br>Dakar Sénégal</p> 
+                          </div>
+                        </li>
+                        <li class="wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                          <div class="cardImage"><span class="icon-brand-1"><img src="{{asset('template-assets/imgs/page/homepage2/email.svg')}}" alt="transp"></span></div>
+                          <div class="cardInfo">
+                            <h6 class="font-sm-bold color-grey-900">Email</h6>
+                            <p class="font-sm color-grey-900"> contact@groupe-demalma.com</p>
+                          </div>
+                        </li>
+                        <li class="wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+                          <div class="cardImage"><span class="icon-brand-1"><img src="{{asset('template-assets/imgs/page/homepage2/phone.svg')}}" alt="transp"></span></div>
+                          <div class="cardInfo">
+                            <h6 class="font-sm-bold color-grey-900">Téléphone</h6>
+                            <p class="font-sm color-grey-900"> (+221) 77 281 43 43</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </x-front-layout>

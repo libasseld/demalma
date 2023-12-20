@@ -36,6 +36,56 @@
     @livewireStyles
 
     <style>
+        .text-slider-wrapper {
+            font-size: 40px;
+            color: #aaa;
+            font-weight: bold;
+            text-transform: uppercase;
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+        .text-slider {
+            height: 50px;
+            padding-left: 0px;
+            overflow: hidden;
+        }
+
+        .text-slider div {
+            color: #fff;
+            height: 50px;
+            margin-bottom: 50px;
+            
+            padding: 2px 0px;
+            /* text-align: center; */
+            box-sizing: border-box;
+        }
+
+        .slider-text1 {
+            animation: slide 7s linear infinite;
+        }
+
+        
+
+        @keyframes slide {
+            0% {
+                margin-top: 0px;
+            }
+            45%{
+                margin-top: 0px;
+            }
+            50% {
+                margin-top: -100px;
+            }
+            95% {
+                margin-top: -100px;
+            }
+            100% {
+                margin-top: 0px;
+            }
+
+        }
+
         .float {
             position: fixed;
             width: 60px;
@@ -85,12 +135,9 @@
             }
 
         }
-
-
         #car_search_btn {
             width: 100%;
         }
-
         .whats-float {
             position: fixed;
             transform: translate(135px, 0px);
@@ -231,15 +278,16 @@
         .sub-menu-item:hover>.all-subs {
             display: block;
         }
-        .banner-1::after{
+
+        .banner-1::after {
             content: "";
-    position: absolute;
-    background: url({{asset('template-assets/imgs/wave.svg')}}) bottom /100% auto;
-    background-repeat: no-repeat;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 7rem;
+            position: absolute;
+            background: url({{ asset('template-assets/imgs/wave.svg') }}) bottom /100% auto;
+            background-repeat: no-repeat;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 7rem;
         }
     </style>
 </head>
@@ -284,7 +332,25 @@
     <script src="{{ asset('template-assets/js/vendors/jquery.elevatezoom.js') }}"></script>
     <script src="{{ asset('template-assets/js/vendors/slick.js') }}"></script>
     <script src="{{ asset('template-assets/js/main28b5.js?v=2.0.0') }}"></script>
-
+<script src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+<script>
+    
+    jQuery(document).ready(function($) {
+  $('.slick.marquee').slick({
+    speed: 5000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    centerMode: true,
+    cssEase: 'linear',
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    infinite: true,
+    initialSlide: 1,
+    arrows: false,
+    buttons: false
+  });
+});</script>
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -298,7 +364,7 @@
             @endphp
         </script>
     @endif
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             let items = document.querySelectorAll('.vw_drop_doown')
@@ -323,20 +389,8 @@
             });
         });
     </script>
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
 </body>
-
-
-<!-- Mirrored from max-themes.net/demos/carrental/{{ route('home') }} by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 12 Mar 2023 14:38:42 GMT -->
-
-</html>
-
-<!--
-Performance optimized by W3 Total Cache. En savoir plus: https://www.w3-edge.com/products/
-
-Page Caching using disk: enhanced
-Content Delivery Network via themegoods-cdn-pzbycso8wng.stackpathdns.com
-
-Served from: themes.themegoods.com @ 2019-10-28 10:07:46 by W3 Total Cache
--->

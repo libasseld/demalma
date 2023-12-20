@@ -19,15 +19,11 @@ use App\Http\Controllers\TestController;
 
 Route::view('/', "home")->name('home');
 Route::view('/qui-sommes-nous', "qui-sommes-nous")->name('qui-sommes-nous');
-Route::view('/la-solution-pour-vos-deplacements-professionnels',"page-3")->name('page-3');
-Route::view('/location-d-une-voiture-pour-les-vacances-un-choix-gagnant',"page-2")->name('page-2');
-Route::view('/les-grands-evenements-prevus-a-dakar-en-2023-de-multiples-occasions-de-louer-sa-voiture-avec-demalma',"page-1")->name('page-1');
 
 
 Route::view('/nos-services', "nos-services")->name('nos-services');
 Route::view('/nos-services/{categorie_slug}/{offre_slug}', "service-details")->name('service-details');
-Route::view('/e-parking', "e-parking")->name('e-parking');
-Route::view('/location-de-voiture-dakar/{slug}', "car-detail")->name('car-detail');
+
 Route::view('/nous-contacter', "nous-contacter")->name('nous-contacter');
 
 Route::middleware([

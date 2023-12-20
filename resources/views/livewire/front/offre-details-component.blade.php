@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container">
             <div class="text-center box-pageheader-1 box-pageheader-services">
-                <span class="btn btn-tag wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;"> Service : {{$categorie->name}}</span>
+                <span class=" btn btn-tag wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn; font-size:18px;padding:10px"> Service : {{$categorie->name}}</span>
                 
                 {{-- <p class="font-md color-grey-900 wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
                     Transp’s roots are in Sea Freight! Whether it’s
@@ -139,7 +139,7 @@
                         </div>
                       </div>
                       <div class="justify-center col-md-12 col-sm-12">
-                        <input class="btn btn-brand-1-big" type="submit" value="Envoyer la demande">
+                        <input class="rounded-lg btn btn-brand-2" type="submit" value="Envoyer la demande">
                         
                       </div>
                     </div>

@@ -18,13 +18,7 @@ class ContactUsComponent extends Component
     public function envoyer()
     {
         $this->validate();
-        $contact                = new Contact();
-        $contact->name          = $this->name;
-        $contact->email         = $this->email;
-        $contact->phone         = $this->phone;
-        $contact->message       = $this->message;
-        $contact->save();
-        $email  = $this->email;
+        
         $donnees = array(
             "name"      => $this->name,
             "email"     => $this->email,

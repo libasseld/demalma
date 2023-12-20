@@ -52,7 +52,7 @@
                         <ul class="main-menu">
 
                             <li class="active"><a href="{{ route('home') }}" class="active">Accueil</a></li>
-                            <li class="has-children"><a href="#">Services</a>
+                            <li class="has-children"><a href="#">Nos expertises</a>
                                 <div class="sub-menu ">
                                     {{-- <div class="left-items">
                                         @foreach ($categories_offres as $category)
@@ -147,7 +147,7 @@
                             
                             <li><a href="{{ route('home') }}">Accueil</a></li>
                             <li class="has-children">
-                                <a href="{{ route('nos-services') }}">Services</a>
+                                <a href="{{ route('nos-services') }}">Nos expertises</a>
 
                                 @foreach ($categories_offres as $category)
                                     <ul class="sub-menu">

@@ -7,38 +7,51 @@
         
     </div>
     <div class="mt-20"></div>
-    <div class="section bg-map d-block">
+    <div class="section bg-map bac d-block">
       <div class="container">
         <div class="box-newsletter">
-          <h3 class="color-brand-2 mb-20 wow animate__animated animate__fadeIn">Contactez nous </h3>
+          <h3 class="mb-20 color-brand-2 wow animate__animated animate__fadeIn">Contactez nous </h3>
           <div class="row">
             <div class="col-lg-7 mb-30">
               <div class="form-newsletter wow animate__animated animate__fadeIn">
-                <form action="https://jthemes.net/themes/html/transp/contacts.php" method="post" name="contact-form-get">
+                <form wire:submit.prevent="envoyer()" name="contact-form-get">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Nom *"  name="name" id="name">
+                        <input class="form-control" type="text" placeholder="Nom *"  wire:model="name" id="name" required>
+                        @error('name')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Email *" name="email" id="email">
+                        <input class="form-control" type="text" placeholder="Email *" wire:model="email" id="email" required>
+                        @error('email')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Téléphone *" name="phone" id="phone">
+                        <input class="form-control" type="text" placeholder="Téléphone *" wire:model="phone" id="phone">
+                        @error('phone')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                     
                     <div class="col-md-12">
                       <div class="form-group">
-                        <textarea class="form-control" placeholder="Message / Note" rows="5" name="comments" id="comments"></textarea>
+                        <textarea class="form-control" placeholder="Message / Note" rows="5" wire:model="message" id="message" required></textarea>
+                        @error('message')
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+                        @enderror
                       </div>
+                      
                     </div>
-                    <div class="col-md-12 justify-center">
-                      <input class="btn btn-brand-1-big" type="submit" value="Envoyer">
+                    <div class="justify-center col-md-12">
+                      <input class="rounded btn btn-brand-2" type="submit" value="Envoyer">
                     </div>
                   </div>
                 </form>

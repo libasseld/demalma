@@ -49,33 +49,31 @@
                     @else
                         
                     <div class="box-swiper">
-                        <div class="swiper-container swiper-group-4 pb-50">
+                        <div class="pt-14 swiper-container swiper-group-4">
                           <div class="swiper-wrapper">
                             @foreach ($category->offres as $offre)
-                            <div class="swiper-slide wow animate__animated animate__fadeIn">
-                                <div class=" wow animate__ animate__fadeIn animated"
-                                style="visibility: visible; animation-name: fadeIn;">
-                                <div class="card-offer hover-up">
-                                    <div class="card-image">
-                                        <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" alt="{{$offre->slug}}">
-                                    </div>
-                                    <div class="card-info">
-                                        <h5 class="color-brand-2 mb-15">{{$offre->designation}}</h5>
-                                        <p class="font-sm color-grey-900 mb-35">{!! $offre->description !!}</p>
-                                        <div class="box-button-offer mb-30">
-                                            <a class="btn btn-link font-sm color-brand-2" href="{{route('service-details', ['categorie_slug' => $category->slug,'offre_slug' => $offre->slug])}}">
-                                                Voir les détails
-                                                <span>
-                                                    <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <div class="col-lg-3 col-md-6 wow animate__ animate__fadeIn animated"
+                        style="visibility: visible; animation-name: fadeIn;">
+                        <div class="card-offer-services hover-up">
+                            <div class="card-image">
+                                <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" alt="{{$offre->slug}}">
+                            </div>
+                            <div class="card-info">
+                                <h5 class="color-brand-2 mb-15">{{$offre->designation}}</h5>
+                                <p class="mb-5 font-sm color-grey-900">{!! $offre->description !!}</p>
+                                <div class="box-button-offer mb-30">
+                                    <a class="btn btn-link font-sm color-brand-2" href="{{route('service-details', ['categorie_slug' => $category->slug,'offre_slug' => $offre->slug])}}">
+                                        Voir les détails
+                                        <span>
+                                            <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
-                            </div>
+                        </div>
+                    </div>
                             @endforeach
                           </div>
                           <div class="text-center box-pagination-customers wow animate__animated animate__fadeIn">
