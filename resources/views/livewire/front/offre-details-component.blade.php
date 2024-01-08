@@ -13,8 +13,8 @@
             </div>
         </div>
     </section>
-    <div class="flex w-4/5 p-0 mx-auto mb-12 border-pink-200 border-solid border-1 rounded-xl">
-        <div class="w-full px-4 pb-4 border-r-2 border-r-4 border-pink-700 border-opacity-100 border-solid left-card lg:w-1/3 bg-offre-left rounded-l-xl">
+    <div class="flex flex-col w-full p-0 mx-auto mb-12 border-pink-200 border-solid lg:w-4/5 lg:flex-row border-1 rounded-xl">
+        <div class="w-full px-4 pb-4 border-r-4 border-opacity-100 border-none lg:border-solid lg:border-pink-700 left-card lg:w-1/3 bg-offre-left rounded-l-xl">
             <div>
                 <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" class="m-auto h-36" alt="">
             </div>
@@ -117,7 +117,7 @@
                       </div>
                       <div class="col-md-6 col-sm-12">
                         <div class="form-group">
-                          <label for="">Quand souhaitez vous réaliser votre démarche ?</label>
+                          <label for="">Quand souhaitez vous réaliser votre démarche?</label>
                           <select aria-placeholder=""  class="py-0 form-control" name="" id="demarrage" wire:model="demarrage">
                               @foreach($demarrage_demandes as $item) 
                                 <option value="{{$item}}">{{$item}}</option>
@@ -131,7 +131,7 @@
                      
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label for="">Souhaitez vous- nous en dire plus sur votre besoin ?</label>
+                          <label for="">Souhaitez vous- nous en dire plus sur votre besoin?</label>
                           <textarea class="form-control" placeholder="Message / Note" rows="3" id="note" wire:model="note"> </textarea>
                           @error('note')
                               <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
@@ -139,7 +139,7 @@
                         </div>
                       </div>
                       <div class="justify-center col-md-12 col-sm-12">
-                        <input class="rounded-lg btn btn-brand-2" type="submit" value="Envoyer la demande">
+                        <input class="w-full rounded-lg lg:w-auto btn btn-brand-2" type="submit" value="Envoyer la demande">
                         
                       </div>
                     </div>

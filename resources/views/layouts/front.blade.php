@@ -62,7 +62,7 @@
         }
 
         .slider-text1 {
-            animation: slide 7s linear infinite;
+            animation: slide 3s linear infinite;
         }
 
         
@@ -279,26 +279,17 @@
             display: block;
         }
 
-        .banner-1::after {
-            content: "";
-            position: absolute;
-            background: url({{ asset('template-assets/imgs/wave.svg') }}) bottom /100% auto;
-            background-repeat: no-repeat;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 7rem;
-        }
+        
     </style>
 </head>
 
-<body>
+<body class="{{ Route::currentRouteName() == 'home' ? 'home-bg-dark' : ''}}" >
 
 
 
 
     @include('layouts.partials.header')
-    <main class="main">
+    <main class="main ">
         {{ $slot }}
 
     </main>

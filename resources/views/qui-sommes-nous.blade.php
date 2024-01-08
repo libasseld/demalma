@@ -1,6 +1,6 @@
     <x-front-layout>
         <section class="section">
-            <div class="container">
+            <div class="p-0 wave-box">
               <div class="text-center box-pageheader-1"><span class="btn btn-tag wow animate__animated animate__fadeIn">Qui sommes nous ?</span>
                 <h2 class="mb-10 color-brand-1 mt-15 wow animate__animated animate__fadeIn">À Propos de Nous</h2>
                 <p class="font-md color-white wow animate__animated animate__fadeIn">
@@ -11,10 +11,10 @@
               </div>
             </div>
           </section>
-          <section class="section mt-100 mb-50">
+          <section class="section ">
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-lg-6 mb-30">
+                <div class="col-lg-6 mb-30 pt-30">
                     <span class="btn btn-tag wow animate__animated animate__fadeIn">Notre Histoire</span>
                   <h2 class="color-brand-2 mt-25 mb-25 wow animate__animated animate__fadeIn">Tout commence ici…</h2>
                   <p class="mb-20 font-md color-grey-900 wow animate__animated animate__fadeIn">
@@ -32,7 +32,7 @@
               </div>
             </div>
           </section>
-          <section class="section mt-50 mb-50">
+          <section class="section mt-50 ">
             <div class="container">
               <div class="row align-items-center item-about-2">
                 <div class="col-lg-6">

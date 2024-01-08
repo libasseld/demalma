@@ -1,5 +1,5 @@
 @foreach ($categories_offres as $category)
-    <section class="section mt-100">
+    <section class="mt-10 section">
         <div class="container">
             <h2 class="mb-20 title-favicon wow animate__ animate__fadeIn animated" style="visibility: visible; animation-name: fadeIn;">{{ $category->name }}</h2>
            {{--  <div class="row align-items-end">
@@ -23,9 +23,9 @@
                 <div class="justify-center row">
                     @if (count($category->offres) < 4)
                     @foreach ($category->offres as $offre)
-                    <div class="col-lg-3 col-md-6 wow animate__ animate__fadeIn animated"
+                    <div class="col-lg-3 col-sm-12 wow animate__ animate__fadeIn animated"
                         style="visibility: visible; animation-name: fadeIn;">
-                        <div class="card-offer-services hover-up">
+                        <div class="mb-4 card-offer-services hover-up">
                             <div class="card-image">
                                 <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" alt="{{$offre->slug}}">
                             </div>
@@ -52,9 +52,9 @@
                         <div class="pt-14 swiper-container swiper-group-4">
                           <div class="swiper-wrapper">
                             @foreach ($category->offres as $offre)
-                            <div class="col-lg-3 col-md-6 wow animate__ animate__fadeIn animated"
+                            <div class="col-lg-12 wow animate__ animate__fadeIn animated"
                         style="visibility: visible; animation-name: fadeIn;">
-                        <div class="card-offer-services hover-up">
+                        <div class="mb-4 card-offer-services hover-up">
                             <div class="card-image">
                                 <img src="{{ asset($offre->image_url ? 'storage/' . $offre->image_url : 'storage/card-images/offre_profil.png') }}" alt="{{$offre->slug}}">
                             </div>

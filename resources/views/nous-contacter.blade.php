@@ -1,9 +1,9 @@
 <x-front-layout>
 
     <section class="section">
-        <div class="container">
-          <div class="box-pageheader-1 text-center"><span class="btn btn-tag wow animate__animated animate__fadeIn">Besoin de plus d'information</span>
-            <h2 class="color-brand-1 mt-15 mb-10 wow animate__animated animate__fadeIn">Contactez-nous</h2>
+        <div class="p-0 wave-box">
+          <div class="text-center box-pageheader-1"><span class="btn btn-tag wow animate__animated animate__fadeIn">Besoin de plus d'informations</span>
+            <h2 class="mb-10 color-brand-1 mt-15 wow animate__animated animate__fadeIn">Contactez-nous</h2>
             <p class="font-md color-white wow animate__animated animate__fadeIn">
                 Vous pouvez nous contacter directement via nos Réseaux sociaux ou remplir le formulaire de contact ci-dessous.
             </p>

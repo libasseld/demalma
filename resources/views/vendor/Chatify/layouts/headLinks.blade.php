@@ -28,3 +28,13 @@
         --primary-color: {{ $messengerColor }};
     }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com/" />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{asset('chat-template/assets/css/perfect-scrollbar.min.css')}}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{asset('chat-template/assets/css/style.css')}}" />
+<link defer rel="stylesheet" type="text/css" media="screen" href="{{asset('chat-template/assets/css/animate.css')}}" />
+<script src="assets/js/perfect-scrollbar.min.js"></script>
+<script defer src="{{asset('chat-template/assets/js/popper.min.js')}}"></script>
+<script defer src="{{asset('chat-template/assets/js/tippy-bundle.umd.min.js')}}"></script>
+<script defer src="{{asset('chat-template/assets/js/sweetalert.min.js')}}"></script>

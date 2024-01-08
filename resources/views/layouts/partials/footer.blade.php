@@ -4,7 +4,7 @@ use App\Models\Reseausocial;
 $reseaux_sociaux = Reseausocial::get();
 
 @endphp
-<footer class="pt-0 mt-0 footer">
+<footer class="mt-0 footer">
         
     <div class="footer-1">
         <div class="container font-xs">
@@ -96,7 +96,7 @@ $reseaux_sociaux = Reseausocial::get();
             <div class="footer-bottom">
                 <div class="row align-items-center">
                     <div class="text-center col-lg-6 col-md-12 text-lg-start"><span
-                            class="color-grey-300 font-md">©WebMaster Agency
+                            class="color-grey-300 font-md">©{{-- WebMaster Agency --}}
                              {{date('Y')}}. All right reversed.</span></div>
                     <div class="text-center col-lg-6 col-md-12 text-lg-end">
                         <ul class="menu-bottom">

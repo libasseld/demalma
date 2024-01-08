@@ -15,3 +15,10 @@
 </script>
 <script src="{{ asset('js/chatify/utils.js') }}"></script>
 <script src="{{ asset('js/chatify/code.js') }}"></script>
+{{-- Chat template Vristo --}}
+<script src="{{asset('chat-template/assets/js/alpine-collaspe.min.js')}}"></script>
+<script src="{{asset('chat-template/assets/js/alpine-persist.min.js')}}"></script>
+<script defer src="{{asset('chat-template/assets/js/alpine-ui.min.js')}}"></script>
+<script defer src="{{asset('chat-template/assets/js/alpine-focus.min.js')}}"></script>
+<script defer src="{{asset('chat-template/assets/js/alpine.min.js')}}"></script>
+<script src="{{asset('chat-template/assets/js/custom.js')}}"></script>

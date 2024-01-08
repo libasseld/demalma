@@ -1,30 +1,34 @@
-    <x-front-layout>
+    <x-front-layout >
+        
         <section class="section d-block">
             <div class="banner-1" >
                 <div class="container">
                     <div class="row ">
-                        <div class="col-lg-7 col-md-12 col-sm-12 banner-1-text">
-                            <h3 class="text-expert">EXPERT EN PROCÉDURE ADMINISTRATIVE</h3>
+                        <div class="col-lg-6 col-md-12 col-sm-12 banner-1-text">
+                            <h3 class="text-expert">EXPERTS EN PROCÉDURES ADMINISTRATIVES</h3>
                             <h1 class="color-white mb-25 wow animate__animated animate__fadeInUp text-accueil"
                                 data-wow-delay=".0s">Confiez-nous <br>
 
                                 vos démarches
                                 <br class="d-none d-lg-block">
-                                <div class="text-slider-wrapper">
-
-                                    <div class="text-slider">
-                                        <div class="slider-text1">administratives </div>
-                                        <div class="slider-text2">et juridiques.</div>
-                                    </div>
-                                </div>
+                                
+                                <div class="ms-slider">
+                                    <ul class="ms-slider__words">
+                                        <li class="ms-slider__word">d’etat civil</li>
+                                        <li class="ms-slider__word">administratives</li>
+                                        <li class="ms-slider__word">juridiques</li>
+                                        <!-- This last word needs to duplicate the first one to ensure a smooth infinite animation -->
+                                        <li class="ms-slider__word">d’etat civil</li>
+                                    </ul>
+                                  </div>
 
                             </h1>
-                            <p class="font-md color-white mb-15 wow animate__animated animate__fadeIn"
+                            <p class="text-expert wow animate__animated animate__fadeInUp"
                                 data-wow-delay=".0s">
                                 Nous les réalisons á votre place.</p>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <p class="mb-20 font-md color-white wow animate__animated animate__fadeInUp"
+                                <div class="col-lg-10">
+                                    <p class="mb-20 text-justify font-md color-white wow animate__animated animate__fadeInUp"
                                         data-wow-delay=".0s">
                                         Création et modification d’entreprise, formalisation légale de
                                         société, demande de nationalité,
@@ -35,20 +39,21 @@
                                 </div>
                             </div>
                             <div class="mt-10 box-button"><a
-                                    class="mr-40 btn btn-brand-1-big hover-up wow animate__animated animate__fadeInUp"
-                                    href="{{route('nos-services')}}">Commencez votre démarche</a><a
-                                    class="btn btn-play popup-youtube hover-up wow animate__animated animate__fadeInUp"
+                                    class="mt-2 mr-40 btn btn-brand-1-big hover-up wow animate__animated animate__fadeInUp"
+                                    href="{{route('nos-services')}}">Commencez votre démarche</a>
+                                    <a
+                                    class="mt-2 btn btn-play popup-youtube hover-up wow animate__animated animate__fadeInUp"
                                     href="https://www.youtube.com/watch?v=kCGf5uNE13I"><img
                                         class="wow animate__animated animate__fadeInUp"
                                         src="{{ asset('template-assets/imgs/template/icons/play.svg') }}"
                                         alt="">Comment ça marche?</a></div>
                         </div>
-                        <div class="images-column col-lg-5 col-md-12 col-sm-12">
-                            <div class="inner-column" style="background-image: url(template-assets/imgs/page/homepage1/globe.png);">
-                                <div class="pattern-layer" style="background-image: url(template-assets/imgs/page/homepage1/pattern-1.png);"></div>
+                        <div class="images-column col-lg-6 col-md-12 col-sm-12">
+                            <div class="inner-column" style="background-image: url(template-assets/imgs/page/homepage1/africa.png);">
+                                <div class="pattern-layer" style="background-image: url(template-assets/imgs/page/homepage1/pattern-3.png);"></div>
                                 <div class="images-outer parallax-scene-1" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
                                     <div class="image" data-depth="0.10" style="transform: translate3d(2.9px, -4.1px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
-                                        <img src="{{asset('template-assets/imgs/page/homepage1/banner-demalma.png')}}" alt="">
+                                        <img src="{{asset('template-assets/imgs/page/homepage1/banner-demalma-new.png')}}" alt="">
                                     </div>
                                     </div>
                                 </div>
@@ -140,7 +145,7 @@
                 </div>
             </div> --}}
         </section>
-        <div class="section pt-65 pb-35">
+        <div class="section pt-65 pb-35 partners">
 
             <div class="container">
 
@@ -277,7 +282,7 @@
                 </div>
             </div>
         </div>
-        <section class="bg-gray-100 slider-section">
+        {{-- <section class="bg-gray-100 slider-section">
             @php
                 $categorie_offres = \App\Models\CategorieOffre::whereHas('offres')
                     ->with('offres')
@@ -324,8 +329,53 @@
                 </swiper-container>
 
             </div>
+        </section> --}}
+        <section class="bg-gray-100 slider-section">
+            <h3 class="mb-4 text-center linear-wipe ">Cliquez sur un service pour commander.</h3>
+            @php
+            $categorie_offres = \App\Models\CategorieOffre::whereHas('offres')
+                ->with('offres')
+                    ->get();
+            @endphp
+            <div class="services-container">
+            @foreach ($categorie_offres as $key => $categorie)
+               
+                    <div class="service-item">
+                        <div>
+                            
+                            {{-- <div class="slider-btn-container">
+                                <a class="btn btn-brand-1 hover-up" href="{{ route('nos-services') }}">
+
+                                    Commencer ma démarche</a>
+                            </div> --}}
+                        </div>
+                        <div>
+                            <h2 class="slider-title title-box-{{$key+1}}">{{ $categorie->name }}</h2>
+                            <h2 class="swiper-title">
+                                {{ $categorie->texte_accroche }}
+                            </h2>
+                           {{--  <p class="mt-2 swiper-description">
+                                {{ $categorie->description }}
+                            </p> --}}
+                            <div class="img-box">
+
+                                @foreach ($categorie->offres as $item)
+                                    <a href="{{ route('service-details', ['categorie_slug' => $categorie->slug, 'offre_slug' => $item->slug]) }}"
+                                        class="img-box-item">
+                                        <div class="mt-2 img-box-item-div">
+                                            <img src="{{ asset($item->image_url ? 'storage/' . $item->image_url : 'storage/card-images/offre_profil.png') }}"
+                                                alt="">
+                                            <p>{{ $item->designation }}</p>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+            @endforeach
+            </div>
         </section>
-        <section class="section mt-100">
+        <section class="section mt-100 why-choose-us">
             <div class="container">
                 <h2 class="mb-20 text-center title-favicon wow animate__animated animate__fadeIn">Pourquoi choisir
                     Demalma ?</h2>
@@ -344,21 +394,22 @@
                             </svg>Faire une demande</a></div>
                 </div>
                 <div class="mt-20 box-background-offer">
-                    <div class="bg-under"></div>
+                    <div class="bg-"></div>
                     <div class="row">
                         <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeIn">
                             <div class="card-offer hover-up">
-                                {{--  <div class="card-image"><img
-                                        src="{{ asset('template-assets/imgs/page/homepage1/cargo-ship.png') }}"
-                                        alt="transp"></div> --}}
+                                 <div class="card-image"><img
+                                        src="{{ asset('template-assets/imgs/page/homepage1/why-chose-demalma-1.png') }}"
+                                        alt="transp"></div>
                                 <div class="card-info">
-                                    <h5 class="color-brand-2 mb-15">Un service Professionnel et efficace.
+                                    <h5 class="text-center color-brand-2 mb-15">Un service Professionnel et efficace.
 
                                     </h5>
-                                    <p class="font-sm color-grey-900 mb-35">Une approche basée sur la maitrise des
-                                        procédures. <br>
+                                    <p class="justify font-sm color-grey-900 mb-35">{{-- Une approche basée sur la maitrise des
+                                        procédures. <br> --}}
 
-                                        Des experts pour réaliser vos démarches avec efficacité.</p>
+                                        Nous travaillons en partenariat avec des cabinets d’avocats, des études de notaire, des cabinets d’huissiers,
+                                        des experts comptables, et d’autres professionnels de renommés internationales.</p>
                                     {{--  <div class="box-button-offer mb-30"><a
                                             class="btn btn-link font-sm color-brand-2">View Details<span>
                                                 <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
@@ -371,13 +422,12 @@
                         </div>
                         <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeIn">
                             <div class="card-offer hover-up">
-                                {{-- <div class="card-image"><img
-                                        src="{{ asset('template-assets/imgs/page/homepage1/plane.png') }}"
+                                <div class="card-image">
+                                    <img src="{{ asset('template-assets/imgs/page/homepage1/why-chose-demalma-2.png') }}"
                                         alt="transp">
-                                </div> --}}
+                                </div>
                                 <div class="card-info">
-                                    <h5 class="color-brand-2 mb-15">Nous nous engageons á vous servir légalement !
-                                    </h5>
+                                    <h5 class="text-center color-brand-2 mb-15">Nous nous engageons á vous servir légalement !</h5>
                                     <p class="font-sm color-grey-900 mb-35">Nous mettons tous les moyens légaux pour
                                         obtenir les résultats attendus sur nos missions.
                                         Chez Demalma, nous représentons nos clients dans les dispositions prévues par la
@@ -395,15 +445,15 @@
                         </div>
                         <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeIn">
                             <div class="card-offer hover-up">
-                                {{-- <div class="card-image"><img
-                                        src="{{ asset('template-assets/imgs/page/homepage1/delivery.png') }}"
+                                <div class="card-image"><img
+                                        src="{{ asset('template-assets/imgs/page/homepage1/why-chose-demalma-3.png') }}"
                                         alt="transp">
-                                </div> --}}
+                                </div>
                                 <div class="card-info">
-                                    <h5 class="color-brand-2 mb-15">Confort, sécurité et gain de temps !</h5>
+                                    <h5 class="text-center color-brand-2 mb-15">Confort, sécurité et gain de temps !</h5>
                                     <p class="font-sm color-grey-900 mb-35">Ne vous déplacez pas ! Ne vous fatiguez
-                                        pas, Gardez votre temps pour vous ! Concentrez vous sur vos activités ! Restez
-                                        zen ! Nous vous simplifions la vie administrative.</p>
+                                        pas, Gardez votre temps précieux pour vous ! Concentrez vous sur vos activités ! Restez
+                                        zen ! Nous vous simplifions la vie administrative. </p>
                                     {{-- <div class="box-button-offer mb-30"><a
                                             class="btn btn-link font-sm color-brand-2">View Details<span>
                                                 <svg class="w-6 h-6 icon-16" fill="none" stroke="currentColor"
@@ -595,34 +645,52 @@
                 </div>
             </div>
         </section> --}}
-        <section class="section bg-1 position-relative pt-90 pb-90 background-dark">
+        <section class="bg-white section position-relative pb-90 background-white">
             <div class="container">
                 <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{asset('template-assets/imgs/page/homepage1/port-4.png')}}" alt="">
+                    </div>
                     <div class="col-lg-6 text-block-section-4">
                         {{--  <span class="btn btn-tag wow animate__animated animate__fadeIn">Get in touch</span> --}}
-                        <h3 class="mb-20 color-grey-100 mt-15 wow animate__animated animate__fadeIn">Pour vous Partout
-                            ici....</h3>
-                        <p class="mb-40 font-md color-grey-100 wow animate__animated animate__fadeIn">
-                            Une solution digitale, intelligente qui centralise plus de 50 types de demandes, de plus de
+                        <h3 class="mb-20 mt-15 wow animate__animated animate__fadeIn">NOUS AMÉLIORONS LES RELATIONS ENTRE LES USAGERS ET LES
+                            SERVICES PUBLICS</h3>
+                        <p class="mb-40 font-md wow animate__animated animate__fadeIn">
+                           {{--  Une solution digitale, intelligente qui centralise plus de 50 types de demandes, de plus de
                             20 services administratifs
                             différents sur un seul espace, une seule plateforme… Nous vous informons, nous vous
                             représentons, nous réalisons,
                             nous suivons, nous retirons et nous vous livrons vos documents partout où vous en aurez
-                            besoin tout Simplement….
+                            besoin tout Simplement…. --}}
                         </p>
-                        <div class="row">
+                        <h4 >Pour le client usager :</h4>
+                        <p class="mb-40 font-md wow animate__animated animate__fadeIn">
+                            Plus besoin de déplacements répétés entre plusieurs administrations. Nous sommes un seul et unique
+                            interlocuteur disponible en ligne et au téléphone.
+                            <br>
+                            Nous centralisons plus de 50 démarches administratives sur une seule et même plateforme.
+                        </p>
+                        <h4 >Pour les services administratifs publics et privés :</h4>
+                        <p class="mb-40 font-md wow animate__animated animate__fadeIn">
+                            Á la place de plusieurs usagers demandeurs, vous traitez avec une unique organisation qui connaît vos
+                            procédures et vos exigences.
+                            <br>
+                            Nous vous évitons les files d’attentes d’usagers et les demandes de renseignement répétés car nous
+                            connaissons vos procédures et vos exigences.
+                        </p>
+                       {{--  <div class="row">
                             <div class="col-lg-12 mb-30">
                                 <h6
-                                    class="chart-title font-md-bold color-grey-100 wow animate__animated animate__fadeIn">
+                                    class="chart-title font-md-bold wow animate__animated animate__fadeIn">
                                     Laissez-vous accompagner</h6>
-                                <p class="font-xs color-grey-100 wow animate__animated animate__fadeIn">Envie d’obtenir
+                                <p class="font-xs wow animate__animated animate__fadeIn">Envie d’obtenir
                                     les conseils d’experts ?</p>
-                                <p class="font-xs color-grey-100 wow animate__animated animate__fadeIn">Envie d’avoir
+                                <p class="font-xs wow animate__animated animate__fadeIn">Envie d’avoir
                                     des réponses de juristes á vos questions ?</p>
-                                <p class="font-xs color-grey-100 wow animate__animated animate__fadeIn">Envie d’être
+                                <p class="font-xs wow animate__animated animate__fadeIn">Envie d’être
                                     informés de l’état d’avancement de votre dossier ?</p>
                             </div>
-                            {{-- <div class="col-lg-6 mb-30">
+                            <div class="col-lg-6 mb-30">
                                 <h6
                                     class="feature-title font-md-bold color-grey-900 wow animate__animated animate__fadeIn">
                                     Introducing
@@ -630,12 +698,12 @@
                                 <p class="font-xs color-grey-900 wow animate__animated animate__fadeIn">The latest
                                     design trends meet
                                     hand-crafted templates.</p>
-                            </div> --}}
-                        </div>
+                            </div> 
+                        </div> --}}
                         <div class="mt-20">
                             <a class="mr-20 btn btn-brand-2 wow animate__animated animate__fadeIn"
                                 href="{{ route('nous-contacter') }}">Nous Contacter</a>
-                            <a class="text-white btn btn-link-medium wow animate__animated animate__fadeIn"
+                            <a class="btn btn-link-medium wow animate__animated animate__fadeIn"
                                 href="{{route('qui-sommes-nous')}}">En
                                 savoir plus
                                 <svg class="w-6 h-6 ml-5 icon-16" fill="none" stroke="currentColor"
@@ -645,28 +713,29 @@
                                     </path>
                                 </svg></a></div>
                     </div>
+                    
                 </div>
             </div>
-            <div class="box-image-touch"></div>
+            {{-- <div class="box-image-touch"></div> --}}
         </section>
         <section class="section bg-stats col-lg-12">
 
             <div class="p-40 row stats-container">
-                <h3 class="text-center text-white col-sm-12">Nos Chiffres Clés</h3>
-                <div class="col-md-3 col-sm-12 border-stat-right">
-                    <p class="stats-title">+350</p>
+                <h3 class="mb-40 text-center text-white col-sm-12">Nos Chiffres Clés</h3>
+                <div class="mt-4 col-md-3 col-sm-12 border-stat-right">
+                    <p class="stats-title"> <span class="pink-color">+</span>350</p>
                     <p class="stats-content">Clients accompagnés.</p>
                 </div>
-                <div class="col-md-3 col-sm-12 border-stat-right">
-                    <p class="stats-title">+100</p>
+                <div class="mt-4 col-md-3 col-sm-12 border-stat-right">
+                    <p class="stats-title"><span class="pink-color">+</span>100</p>
                     <p class="stats-content">Services administratifs où nous nous déplaçons pour vous.</p>
                 </div>
-                <div class="col-md-3 col-sm-12 border-stat-right">
-                    <p class="stats-title">+50</p>
+                <div class="mt-4 col-md-3 col-sm-12 border-stat-right">
+                    <p class="stats-title"><span class="pink-color">+</span>50</p>
                     <p class="stats-content">Types de procédures administratives que nous maitrisons.</p>
                 </div>
-                <div class="col-md-3 col-sm-12">
-                    <p class="stats-title">+08 annéés</p>
+                <div class="mt-4 col-md-3 col-sm-12">
+                    <p class="stats-title"><span class="pink-color">+</span>08 années</p>
                     <p class="stats-content">D’expertises dans le domaine.</p>
                 </div>
             </div>
@@ -677,73 +746,57 @@
                     {{-- <img class="mb-15"
                         src="{{ asset('template-assets/imgs/template/icons/favicon.svg') }}" alt="transp"> --}}
                     <h2 class="mb-20 color-brand-2 wow animate__animated animate__fadeIn">Comment ça marche ?</h2>
-                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">
+                    <p class="font-md color-grey-200 wow animate__animated animate__fadeIn">
                         Choisissez l'offre qui vous correspond, ajouter votre demande en soumettant vos informations
                         dans le formulaire. Puis, payez pour confirmer votre demande.
                     </p>
                 </div>
                 <div class="row mt-50">
                     <div class="col-lg-6 mb-30">
-                        <div class="box-image-how"><img class="w-100 wow animate__animated animate__fadeIn"
-                                src="{{ asset('template-assets/imgs/page/homepage1/how-it-work.png') }}"
-                                alt="transp">
-                            <div class="box-info-bottom-img">
-                                <div class="image-play"><img class="mb-15 wow animate__animated animate__fadeIn"
-                                        src="{{ asset('template-assets/imgs/template/icons/play.svg') }}"
-                                        alt="transp"></div>
-                                <div class="info-play">
-                                    <h4 class="color-white mb-15 wow animate__animated animate__fadeIn">Nous avons 06
-                                        années
-                                        de l'expérience en
-                                        cette passion</h4>
-                                    <p class="font-sm color-white wow animate__animated animate__fadeIn">
-                                        Nous sommes conscients des différentes variations qui peuvent avoir dans les
-                                        démarches administratives et vous porteront conseil sur les procédures.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-30">
-                        <img class="m-auto"
-                            src="{{ asset('template-assets/imgs/page/homepage1/process-demalma.svg') }}"
-                            alt="transp">
-                        {{-- <ul class="list-how-works">
+                        <ul class="list-how-works">
+                            
                             <li>
                                 <div class="image-how"><span class="img"><img
                                             src="{{ asset('template-assets/imgs/page/homepage1/order.png') }}"
                                             alt="transp"></span></div>
                                 <div class="info-how">
-                                    <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Le client lance sa commande</h5>
-                                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Choisissez votre offre et remplissez le formulaire pour créer votre demande</p>
+                                    <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Commander votre DEM
+                                    </h5>
+                                    <p class="font-md color-grey-200 wow animate__animated animate__fadeIn">Commandez votre document administratif sur la plateforme Demalma en toute sécurité 7j/7 á l’heure qui vous convient.</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="image-how"><span class="img"><img
-                                            src="{{ asset('template-assets/imgs/page/homepage1/payment.png') }}"
+                                            src="{{ asset('template-assets/imgs/page/homepage1/contact.png') }}"
                                             alt="transp"></span></div>
                                 <div class="info-how">
-                                    <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Valider votre commande en payant
-                                    </h5>
-                                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Payer directement via Orange Money, Wave, VISA... </p>
+                                    <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Echangez instantanément avec l'équipe Demalma</h5>
+                                    <p class="font-md color-grey-200 wow animate__animated animate__fadeIn">
+                                        Echangez instantanément avec vos assistants personnels Demalma Par 
+                                        Téléphone, Chat sur la plateforme, WhatsApp, Email.
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <div class="image-how"><span class="img"><img
-                                            src="{{ asset('template-assets/imgs/page/homepage1/warehouse.png') }}"
+                                            src="{{ asset('template-assets/imgs/page/homepage1/documents.png') }}"
                                             alt="transp"></span></div>
                                 <div class="info-how">
                                     <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Completer vos documents</h5>
-                                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn"> Connectez-vous dans votre compte pour soumettre les documents demandées</p>
+                                    <p class="font-md color-grey-200 wow animate__animated animate__fadeIn">
+                                        Nos experts en procédures administratives reçoivent et traitent en instantané toutes les demandes reçues sur la PLATEFORME, du lundi au samedi de 9h à 21h.
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <div class="image-how"><span class="img"><img
-                                            src="{{ asset('template-assets/imgs/page/homepage1/picked.png') }}"
+                                            src="{{ asset('template-assets/imgs/page/homepage1/check-status.png') }}"
                                             alt="transp"></span></div>
                                 <div class="info-how">
                                     <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Suivez l'état de votre demande</h5>
-                                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Connectez-vous dans votre compte pour suivre l'état de votre demande</p>
+                                    <p class="font-md color-grey-200 wow animate__animated animate__fadeIn">
+                                        Grace á votre compte client Demalma, suivez l’état d’évolution de vos dossiers sur votre espace personnel.
+                                    </p>
                                 </div>
                             </li>
                             <li>
@@ -752,117 +805,160 @@
                                             alt="transp"></span></div>
                                 <div class="info-how">
                                     <h5 class="color-brand-2 wow animate__animated animate__fadeIn">Livraison des documents</h5>
-                                    <p class="font-md color-grey-700 wow animate__animated animate__fadeIn">Vos documents vous seront livré chez vous !</p>
+                                    <p class="font-md color-grey-200 wow animate__animated animate__fadeIn">Vos documents vous seront livré chez vous !</p>
                                 </div>
                             </li>
-                        </ul> --}}
+                        </ul>
+                        <div class="text-white text-how-it-works box-image-how ">
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-30">
+                        <img class="m-auto"
+                            src="{{ asset('template-assets/imgs/page/homepage1/process-demalma.svg') }}"
+                            alt="transp">
+                        
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section mt-50 bg-customers-say">
+        <section class="section bg-customers-say">
             <div class="container">
-                <h2 class="mb-20 title-favicon color-white title-padding-left wow animate__animated animate__fadeIn">
-                    Ce que disent nos clients</h2>
-                <p class="font-lg color-white pl-55 wow animate__animated animate__fadeIn">Témoignages Clients </p>
+                <h2 class="mb-20 text-center title-favicon color-white title-padding-left wow animate__animated animate__fadeIn">
+                    Nos Clients, Nos Fiertés !</h2>
+                <p class="text-center font-lg color-white pl-55 wow animate__animated animate__fadeIn">Témoignages Clients </p>
             </div>
-            <div class="box-slide-customers mt-50">
+            <div class="box-slide-customers testimonial-section mt-50">
                 <div class="box-swiper">
-                    <div class="swiper-container swiper-group-3-customers pb-50">
+                    <div class="swiper-container swiper-group-1 pb-50">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide wow animate__animated animate__fadeIn">
                                 <div class="card-testimonial-grid">
-                                    <div class="box-author mb-25"><a href="#"><img
-                                                src="{{ asset('template-assets/imgs/page/homepage1/author.png') }}"
-                                                alt="transp"></a>
-                                        <div class="author-info"><a href="#"><span
-                                                    class="font-xl-bold color-brand-2 author-name">Guy
-                                                    Hawkins</span></a><span
-                                                class="font-sm color-grey-500 department">Bank of America</span></div>
+                                    <div class="box-author mb-25"><a href="#">
+                                        <img src="{{ asset('template-assets/imgs/page/homepage1/author.png') }}" alt="transp"></a>
+                                        <div class="author-info">
+                                            <a href="#">
+                                                <span class="font-xl-bold color-brand-2 author-name">Khoudia TOURE</span>
+                                            </a>
+                                            {{-- <span class="font-sm color-grey-500 department">Bank of America</span> --}}
+                                        </div>
                                     </div>
-                                    <p class="font-md color-grey-700">Access the same project through five different
-                                        dynamic views: a
-                                        kanban board, Gantt chart, spreadsheet, calendar or simple task list.</p>
+                                    <p class="font-md color-grey-700">
+                                        Je tiens à dire que je suis extrêmement satisfaite des services DEMALMA  
+                                        qui sont vraiment de qualité, vous avez fait un super travail et je n’hésiterais 
+                                        pas à faire recours à vos services pour des projets à venir et vous recommander.
+                                    </p>
                                     <div class="card-bottom-info justify-content-between">
-                                        <div class="rating text-start"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><br><span class="font-sm color-white">For
-                                                customer support</span></div><span
-                                            class="font-xs color-grey-500 rate-post text-end">Rate: 4.95
-                                            / 5</span>
+                                        <div class="rating text-start">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            
+                                        </div>
+                                        <span class="font-sm color-white">Services de qualité</span>
+                                        {{-- <span class="font-xs color-grey-500 rate-post text-end">Rate: 4.95 / 5</span> --}}
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="swiper-slide wow animate__animated animate__fadeIn">
                                 <div class="card-testimonial-grid">
-                                    <div class="box-author mb-25"><a href="#"><img
-                                                src="{{ asset('template-assets/imgs/page/homepage1/author2.png') }}"
-                                                alt="transp"></a>
-                                        <div class="author-info"><a href="#"><span
-                                                    class="font-xl-bold color-brand-2 author-name">Eleanor
-                                                    Pena</span></a><span class="font-sm color-grey-500 department">Bank
-                                                of America</span></div>
+                                    <div class="box-author mb-25"><a href="#">
+                                        <img src="{{ asset('template-assets/imgs/page/homepage1/author.png') }}" alt="transp"></a>
+                                        <div class="author-info">
+                                            <a href="#">
+                                                <span class="font-xl-bold color-brand-2 author-name">Fatou FALL</span>
+                                            </a>
+                                            {{-- <span class="font-sm color-grey-500 department">Bank of America</span> --}}
+                                        </div>
                                     </div>
-                                    <p class="font-md color-grey-700">Access the same project through five different
-                                        dynamic views: a
-                                        kanban board, Gantt chart, spreadsheet, calendar or simple task list.</p>
+                                    <p class="font-md color-grey-700">
+                                        Les  services de DEMALMA m’ont été recommandée par une amie et je m’en réjouis car cela été d’une importance capitale car m’ayant permis à découvrir des services innovateurs.
+                                        DEMALMA a effectué toutes les démarches de formalisation de mon entreprise, notamment les déclarations fiscales, sociales et de démarrage de mes activités. <br>
+                                        Le dossier confié à l’équipe a été très fructueuse et d’une vivacité incroyable car si c’était moi qui s’en occupait personnellement, ça prendrai plus de temps et de coût.
+                                    </p>
                                     <div class="card-bottom-info justify-content-between">
-                                        <div class="rating text-start"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><br><span class="font-sm color-white">For
-                                                customer support</span></div><span
-                                            class="font-xs color-grey-500 rate-post text-end">Rate: 4.95
-                                            / 5</span>
+                                        <div class="rating text-start">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            
+                                        </div>
+                                        <span class="font-sm color-white">Vivacité </span>
+                                        {{-- <span class="font-xs color-grey-500 rate-post text-end">Rate: 4.95 / 5</span> --}}
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="swiper-slide wow animate__animated animate__fadeIn">
                                 <div class="card-testimonial-grid">
-                                    <div class="box-author mb-25"><a href="#"><img
-                                                src="{{ asset('template-assets/imgs/page/homepage1/author3.png') }}"
-                                                alt="transp"></a>
-                                        <div class="author-info"><a href="#"><span
-                                                    class="font-xl-bold color-brand-2 author-name">Cody
-                                                    Fisher</span></a><span
-                                                class="font-sm color-grey-500 department">Bank of America</span></div>
+                                    <div class="box-author mb-25"><a href="#">
+                                        <img src="{{ asset('template-assets/imgs/page/homepage1/author.png') }}" alt="transp"></a>
+                                        <div class="author-info">
+                                            <a href="#">
+                                                <span class="font-xl-bold color-brand-2 author-name">Sabrina COULIBALY SECK</span>
+                                            </a>
+                                            {{-- <span class="font-sm color-grey-500 department">Bank of America</span> --}}
+                                        </div>
                                     </div>
-                                    <p class="font-md color-grey-700">Access the same project through five different
-                                        dynamic views: a
-                                        kanban board, Gantt chart, spreadsheet, calendar or simple task list.</p>
+                                    <p class="font-md color-grey-700">
+                                        Je suis passé par DEMALMA pour obtenir la nationalité sénégalaise par voie de mariage après avoir énormément peiné pour l’obtenir moi-même. <br>
+                                        J’ai été très surpris et heureux d’obtenir la CNI sénégalaise et je continue toujours à faire appel à leurs services pour toutes les démarches liées à la citoyenneté de ma famille. 
+
+                                    </p>
                                     <div class="card-bottom-info justify-content-between">
-                                        <div class="rating text-start"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><img
-                                                src="{{ asset('template-assets/imgs/template/icons/star.svg') }}"
-                                                alt="transp"><br><span class="font-sm color-white">For
-                                                customer support</span></div><span
-                                            class="font-xs color-grey-500 rate-post text-end">Rate: 4.95
-                                            / 5</span>
+                                        <div class="rating text-start">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            
+                                        </div>
+                                        <span class="font-sm color-white">Client satisfait</span>
+                                        {{-- <span class="font-xs color-grey-500 rate-post text-end">Rate: 4.95 / 5</span> --}}
                                     </div>
                                 </div>
                             </div>
+                            
+                            
+                            <div class="swiper-slide wow animate__animated animate__fadeIn">
+                                <div class="card-testimonial-grid">
+                                    <div class="box-author mb-25"><a href="#">
+                                        <img src="{{ asset('template-assets/imgs/page/homepage1/author.png') }}" alt="transp"></a>
+                                        <div class="author-info">
+                                            <a href="#">
+                                                <span class="font-xl-bold color-brand-2 author-name"> Manu DIZER</span>
+                                            </a>
+                                            <span class="font-sm color-grey-500 department">Directeur Général SASSELOU</span>
+                                        </div>
+                                    </div>
+                                    <p class="font-md color-grey-700">
+                                        Je trouve les offres de services  de DEMALMA d’un grand apport car étant étranger qui devait s’installer au Sénégal, l’équipe de DEMALMA à travers sa dirigeante  Rama, m’a assisté concernant les démarches administratives et juridiques de ma structure (modification forme juridique jusqu’à la déclaration de l’entreprise).
+                                        <br>
+                                        J’y vois beaucoup d’avantages notamment le gain du temps et par la même occasion j’y ai eu non seulement de nouvelles connaissances, mais je bénéficie jusqu’à présent des Conseils de DEMALMA pour un coût raisonnable.
+
+                                    </p>
+                                    <div class="card-bottom-info justify-content-between">
+                                        <div class="rating text-start">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            <img src="{{ asset('template-assets/imgs/template/icons/star.svg') }}" alt="transp">
+                                            
+                                            <span class="font-sm color-white">Collaboration très satisfaisante</span>
+                                        </div>
+                                        {{-- <span class="font-xs color-grey-500 rate-post text-end">Rate: 4.95 / 5</span> --}}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
                         </div>
                         <div class="box-pagination-customers">
                             <div
@@ -1036,7 +1132,7 @@
         <section class="relative section pt-70 pb-70 bg-get-quote ">
             <div class="caption">
                 <div class="text-center caption-content">
-                    <h3>Nous le faisons pour vous</h3>
+                    <h3 class="text-white">Nous le faisons pour vous</h3>
                     <p>Vous êtes en activité et vous manquez de disponibilité  ?</p>
                     <p>Vous êtes sénégalais de la diaspora, loin des services administratifs de votre pays  ?</p>
                     <p>Vous êtes un expatrié installé au Sénégal et vous ne maitrisez pas toutes les formalités liés á votre séjour ?</p>
